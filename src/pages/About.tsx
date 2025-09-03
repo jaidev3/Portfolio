@@ -1,9 +1,9 @@
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 pt-20 transition-colors duration-300">
       <section className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-8">My Story</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 mb-8 transition-colors duration-300">My Story</h1>
           
           <div className="mb-8">
             <picture>
@@ -17,11 +17,11 @@ const About = () => {
                 className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-lg"
               />
             </picture>
-            <h2 className="text-2xl md:text-3xl font-semibold text-slate-700 mt-6">Jaidev Yadav</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-200 mt-6 transition-colors duration-300">Jaidev Yadav</h2>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">
               Ever since I was a kid, creating new things always got me excited.
               However, at that time I didn't have enough resources to pursue the
               same. That passion drove me to pursue engineering, where I was exposed

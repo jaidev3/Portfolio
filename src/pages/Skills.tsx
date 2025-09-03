@@ -88,11 +88,11 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 pt-20 transition-colors duration-300">
       <section className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Skills & Expertise</h2>
-          <p className="text-xl text-slate-600">Proficiency levels across different technologies</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 mb-4 transition-colors duration-300">Skills & Expertise</h2>
+          <p className="text-xl text-slate-600 dark:text-slate-300 transition-colors duration-300">Proficiency levels across different technologies</p>
         </div>
 
         <div className="grid gap-12 md:gap-16">
@@ -110,7 +110,7 @@ const Skills = () => {
                 <div className="w-16 h-16 bg-sky-500 rounded-full flex items-center justify-center mr-4">
                   <i className={`${category.icon} text-white text-2xl`}></i>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-slate-800">{category.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-semibold text-slate-800 dark:text-slate-200 transition-colors duration-300">{category.title}</h3>
               </div>
 
               <div className="grid gap-6 md:gap-8">
@@ -124,10 +124,10 @@ const Skills = () => {
                     }`}
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-lg font-medium text-slate-700">{skill.name}</span>
+                      <span className="text-lg font-medium text-slate-700 dark:text-slate-300 transition-colors duration-300">{skill.name}</span>
                       <span className="text-lg font-semibold text-sky-500">{skill.percentage}%</span>
                     </div>
-                    <div className="w-full bg-slate-300 rounded-full h-3 overflow-hidden">
+                    <div className="w-full bg-slate-300 dark:bg-slate-600 rounded-full h-3 overflow-hidden transition-colors duration-300">
                       <div
                         className={`h-full bg-gradient-to-r from-sky-400 to-sky-600 rounded-full transition-all duration-1000 ease-out ${
                           visibleCategories.has(categoryIndex) ? '' : 'w-0'
