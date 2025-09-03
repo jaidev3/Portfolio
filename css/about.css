@@ -3,45 +3,22 @@
    ======================================== */
 
 /* Modern About Section with Card Layouts */
-#about {
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-  min-height: 100vh;
-  position: relative;
-}
-
-#about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-      circle at 10% 20%,
-      rgba(14, 165, 233, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(168, 85, 247, 0.1) 0%,
-      transparent 50%
-    );
-  pointer-events: none;
-}
+/*  */
 
 .user-details {
-  max-width: 1200px;
+  max-width: none;
+  padding: 100px 20px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
 
 .user-details h1 {
   text-align: center;
   font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #1e293b, #0ea5e9, #8b5cf6);
+  background: linear-gradient(135deg, #ffffff, #e0e7ff, #c7d2fe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -100,22 +77,22 @@
 .user-details h2 {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #ffffff;
   margin: 20px 0;
   text-align: center;
 }
 
 .user-details p {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 40px;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #334155;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  color: #e0e7ff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   animation: slideInUp 1s ease-out 0.6s both;
@@ -156,7 +133,7 @@
 .user-details p:hover {
   transform: translateY(-5px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Responsive Design for About Section */

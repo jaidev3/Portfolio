@@ -29,21 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
         skillObserver.observe(category);
     });
     
-    // Add smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.navbar a, .header-links .link');
-    navLinks.forEach(link => {
+    // Add smooth scrolling for internal navigation links only
+    const internalLinks = document.querySelectorAll('.header-links .link');
+    internalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 100; // Account for fixed navbar
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            // Only prevent default for internal section links (starting with #)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 100; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // Let navbar links navigate normally to other pages
         });
     });
     
