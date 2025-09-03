@@ -5269,3 +5269,373 @@ a img {
     width: 50%;
   }
 }
+
+/* Skills Timeline Section Styles */
+.skills-timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.skills-timeline-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.skills-timeline-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.skills-timeline-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.skills-timeline-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-top: 20px;
+}
+
+.skills-timeline {
+  position: relative;
+}
+
+.skills-timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.skill-category {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 80px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.category-icon {
+  position: absolute;
+  left: -65px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  z-index: 2;
+}
+
+.category-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.category-header h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.skills-list {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+}
+
+.skill-bar {
+  margin-bottom: 25px;
+}
+
+.skill-bar:last-child {
+  margin-bottom: 0;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.skill-percentage {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  width: 0;
+  transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  animation: move 2s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* Animation trigger */
+.skill-category.animate .progress-fill {
+  width: var(--progress-width);
+}
+
+/* Hover effects */
+.skill-bar:hover .progress-fill {
+  transform: scaleY(1.2);
+  transition: transform 0.3s ease, width 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-bar:hover .skill-name {
+  color: #667eea;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-timeline-container {
+    padding: 40px 15px;
+  }
+  
+  .skills-timeline-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .skills-timeline::before {
+    left: 20px;
+  }
+  
+  .skill-category {
+    padding-left: 60px;
+  }
+  
+  .category-icon {
+    left: -45px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .category-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .category-header h3 {
+    font-size: 1.4rem;
+  }
+  
+  .skills-list {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-timeline-header h2 {
+    font-size: 1.9rem;
+  }
+  
+  .skills-timeline::before {
+    left: 15px;
+  }
+  
+  .skill-category {
+    padding-left: 50px;
+  }
+  
+  .category-icon {
+    left: -40px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .category-icon i {
+    font-size: 1rem;
+  }
+  
+  .category-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .skill-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/* Global Modern Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add subtle animations to all sections */
+section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Enhanced footer styling */
+footer {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 0;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+/* Enhanced button hover effects */
+button, .btn, a[href] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Enhanced text selection */
+::selection {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+}
+
+::-moz-selection {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+}
+
+/* Responsive animation adjustments */
+@media (max-width: 768px) {
+  /* Reduce animation intensity on mobile */
+  * {
+    animation-duration: 0.5s !important;
+  }
+  
+  section {
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
