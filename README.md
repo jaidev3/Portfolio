@@ -1,11 +1,56 @@
-# React + TypeScript + Vite
+# Portfolio - React + TypeScript + Vite + Aceternity UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern portfolio website built with React, TypeScript, Vite, and enhanced with Aceternity UI components for beautiful animations and interactions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ **Vite** - Fast build tool and development server
+- ⚛️ **React 19** - Latest React with modern features
+- 🎨 **Tailwind CSS** - Utility-first CSS framework
+- 🌙 **Dark Mode** - Toggle between light and dark themes
+- ✨ **Aceternity UI** - Beautiful animated components
+- 🎭 **Motion** - Smooth animations and transitions
+- 📱 **Responsive Design** - Works on all devices
+- 🔧 **TypeScript** - Type-safe development
+
+## Aceternity UI Integration
+
+This project includes a complete Aceternity UI setup with:
+
+- **Utility Functions**: `cn()` function for clean class name merging using `clsx` and `tailwind-merge`
+- **Motion Animations**: Smooth animations powered by the motion library
+- **Enhanced Tailwind Config**: Custom animations and keyframes for better UI interactions
+- **Sample Components**: Demonstration components showing Aceternity UI capabilities
+
+### Dependencies
+
+- `motion` - Animation library (React 19 compatible)
+- `clsx` - Utility for constructing className strings
+- `tailwind-merge` - Merge Tailwind CSS classes without style conflicts
+
+### Usage
+
+```tsx
+import { cn } from './lib/utils';
+import { motion } from 'motion/react';
+
+// Example component using Aceternity UI utilities
+const MyComponent = ({ className }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={cn(
+        "base-styles here",
+        "conditional-styles",
+        className
+      )}
+    >
+      Content here
+    </motion.div>
+  );
+};
+```
 
 ## Expanding the ESLint configuration
 

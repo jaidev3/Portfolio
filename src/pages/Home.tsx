@@ -1,21 +1,60 @@
-import { useTheme } from '../contexts/ThemeContext';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
+import { useTheme } from "../contexts/ThemeContext";
+import Sparkles from "../components/Sparkles";
+import FloatingCard from "../components/FloatingCard";
+import AnimatedText from "../components/AnimatedText";
+import FloatingElements from "../components/FloatingElements";
 
-const Home = () => {
+const Home: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const observerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
+    <div ref={observerRef} className="min-h-screen relative overflow-hidden">
+      <Sparkles
+        className="absolute inset-0 bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300"
+        particleColor="#0ea5e9"
+        particleDensity={1.5}
+        minSize={8}
+        maxSize={16}
+      >
+        <FloatingElements />
         <div className="flex items-center justify-center min-h-screen">
-          <div className="text-center z-10 relative">
-            <h1 className="mb-8">
-              <span className="block text-6xl md:text-8xl font-bold text-slate-800 dark:text-slate-100 mb-4 transition-colors duration-300">
-                Jaidev Yadav
-              </span>
-              <span className="block text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light transition-colors duration-300">
-                Programmer • Web Developer • Graphic Designer
-              </span>
-            </h1>
+          <FloatingCard className="text-center z-10 p-12 max-w-4xl mx-4" delay={0.2}>
+            <div className="mb-8">
+              <AnimatedText
+                text="Jaidev Yadav"
+                className="text-6xl md:text-8xl font-bold text-slate-800 dark:text-slate-100 mb-4 transition-colors duration-300"
+                variant="fade"
+                delay={0.5}
+              />
+              <AnimatedText
+                text="Programmer • Web Developer • Graphic Designer"
+                className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light transition-colors duration-300"
+                variant="slide"
+                delay={1.2}
+              />
+            </div>
             <div className="flex justify-center space-x-6 mt-8">
               <a
                 aria-label="My LinkedIn Profile"
@@ -54,9 +93,9 @@ const Home = () => {
                 <i className="fas fa-envelope text-xl"></i>
               </a>
             </div>
-          </div>
+          </FloatingCard>
         </div>
-      </div>
+      </Sparkles>
     </div>
   );
 };
