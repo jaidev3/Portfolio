@@ -13,8 +13,131 @@ body {
   padding: 0;
   font-size: 100%;
   line-height: 1.5;
-  color: #555;
+  color: #334155;
   font-family: "Nunito Sans", sans-serif;
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  body {
+    color: #334155;
+  }
+  
+  strong {
+    color: #1e293b !important;
+  }
+  
+  #particles-js {
+    background: #f8fafc;
+    background: -webkit-linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+  }
+  
+  .footer {
+    background: #f8fafc;
+    background: -webkit-linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+    color: #334155;
+  }
+  
+  .footer a {
+    color: #334155;
+  }
+  
+  .footer a:active,
+  .footer a:hover {
+    color: #0ea5e9;
+  }
+  
+  .header {
+    color: #1e293b;
+  }
+  
+  .header .site-title,
+  .header .site-description {
+    color: #1e293b;
+  }
+  
+  .header-links .link {
+    color: #1e293b;
+  }
+  
+  .header-icons .icon {
+    color: #1e293b;
+    border-color: #1e293b;
+  }
+  
+  .header-icons .icon:active,
+  .header-icons .icon:hover {
+    color: #f8fafc;
+    background: #0ea5e9;
+  }
+  
+  .down {
+    color: #1e293b;
+  }
+  
+  .project-link {
+    color: #0ea5e9;
+    border-color: #0ea5e9;
+  }
+  
+  .project-link:active,
+  .project-link:hover {
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #f8fafc;
+  }
+  
+  #projects h1,
+  #projects h3 {
+    color: #1e293b;
+  }
+  
+  .user-projects p,
+  .contents p,
+  .contents-right p {
+    color: #475569;
+  }
+  
+  .user-projects li {
+    color: #0ea5e9;
+  }
+  
+  /* About section light mode styles */
+  #about h1,
+  #about h2 {
+    color: #1e293b;
+  }
+  
+  #about p,
+  .user-details p {
+    color: #334155;
+  }
+  
+  /* Skills section light mode styles */
+  .tech h2 {
+    color: #1e293b;
+  }
+  
+  .tech p,
+  .user p {
+    color: #334155;
+  }
+}
+
+/* Default (dark) styles for About and Skills sections */
+#about h1,
+#about h2,
+.tech h2 {
+  color: #1e293b;
+}
+
+#about p,
+.user-details p,
+.tech p,
+.user p {
+  color: #334155;
 }
 
 article,
@@ -4796,7 +4919,7 @@ strong {
   margin-top: 1em;
   padding-top: 1em;
   line-height: 1.25;
-  color: #333;
+  color: #1e293b;
 }
 
 h2 {
@@ -4828,11 +4951,11 @@ a img {
 }
 
 #particles-js {
-  background: #1488cc;
+  background: #0f1419;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+  background: -webkit-linear-gradient(135deg, #0f1419, #1a2332, #2d4a6b);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2b32b2, #1488cc);
+  background: linear-gradient(135deg, #0f1419, #1a2332, #2d4a6b);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   display: flex;
@@ -4933,7 +5056,7 @@ a img {
 
 .header-icons .icon:active,
 .header-icons .icon:hover {
-  color: #1488cc;
+  color: #00d4ff;
   background: #fff;
 }
 
@@ -4974,7 +5097,7 @@ a img {
 .down .icon:hover,
 .footer a:active,
 .footer a:hover {
-  color: #4b5664;
+  color: #00d4ff;
 }
 
 #about {
@@ -5048,12 +5171,18 @@ a img {
 }
 
 .user-projects li {
-  color: #1488cc;
+  color: #00d4ff;
   font-size: 1.1rem;
 }
 
 .user-projects p {
   margin-right: 5px;
+  color: #334155;
+}
+
+.contents p,
+.contents-right p {
+  color: #334155;
 }
 
 @media only screen and (min-width: 550px) {
@@ -5091,9 +5220,9 @@ a img {
   display: inline-block;
   margin: 10px 0;
   padding: 5px;
-  color: #1488cc;
+  color: #00d4ff;
   background-color: transparent;
-  border: 1px solid #1488cc;
+  border: 1px solid #00d4ff;
   border-radius: 10px;
   text-align: center;
   outline: 0;
@@ -5105,24 +5234,24 @@ a img {
 
 .project-link:active,
 .project-link:hover {
-  background-color: #5347a8;
-  border-color: #5347a8;
+  background-color: #6366f1;
+  border-color: #6366f1;
   color: #fff;
   transition: color 0.3s ease-in, background-color 0.3s ease-in,
     border-color 0.3s ease-in;
 }
 
 .footer {
-  background: #1488cc;
+  background: #0f1419;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+  background: -webkit-linear-gradient(135deg, #0f1419, #1a2332, #2d4a6b);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2b32b2, #1488cc);
+  background: linear-gradient(135deg, #0f1419, #1a2332, #2d4a6b);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 10px 0;
   margin-top: 100px;
   text-align: center;
-  color: #fff;
+  color: #1e293b;
 }
 
 .footer .love {
@@ -5132,7 +5261,7 @@ a img {
 .footer a {
   text-decoration: none;
   margin: 0;
-  color: #fff;
+  color: #1e293b;
 }
 
 @media only screen and (max-width: 550px) {

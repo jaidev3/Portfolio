@@ -2,11 +2,11 @@
 .navbar {
   z-index: 100000;
   overflow: hidden;
-  background: #1488cc;
+  background: #0f1419;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+  background: -webkit-linear-gradient(135deg, #0f1419, #1a2332, #2d4a6b);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2b32b2, #1488cc);
+  background: linear-gradient(135deg, #0f1419, #1a2332, #2d4a6b);
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -30,11 +30,29 @@
 
 /* Change background on mouse-over */
 .navbar a:hover {
-  background: #1488cc;
-  color: black;
+  background: #00d4ff;
+  color: #0f1419;
 }
 
 /* Main content */
 .main {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .navbar {
+    background: #f8fafc;
+    background: -webkit-linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+  }
+  
+  .navbar a {
+    color: #334155;
+  }
+  
+  .navbar a:hover {
+    background: #0ea5e9;
+    color: #f8fafc;
+  }
 }
