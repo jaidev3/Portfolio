@@ -22,104 +22,104 @@ body {
   body {
     color: #334155;
   }
-  
+
   strong {
     color: #1e293b !important;
   }
-  
+
   #particles-js {
     background: #f8fafc;
     background: -webkit-linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
     background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
   }
-  
+
   .footer {
     background: #f8fafc;
     background: -webkit-linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
     background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
     color: #334155;
   }
-  
+
   .footer a {
     color: #334155;
   }
-  
+
   .footer a:active,
   .footer a:hover {
     color: #0ea5e9;
   }
-  
+
   .header {
     color: #1e293b;
   }
-  
+
   .header .site-title,
   .header .site-description {
     color: #1e293b;
   }
-  
+
   .header-links .link {
     color: #1e293b;
   }
-  
+
   .header-icons .icon {
     color: #1e293b;
     border-color: #1e293b;
   }
-  
+
   .header-icons .icon:active,
   .header-icons .icon:hover {
     color: #f8fafc;
     background: #0ea5e9;
   }
-  
+
   .down {
     color: #1e293b;
   }
-  
+
   .project-link {
     color: #0ea5e9;
     border-color: #0ea5e9;
   }
-  
+
   .project-link:active,
   .project-link:hover {
     background-color: #0ea5e9;
     border-color: #0ea5e9;
     color: #f8fafc;
   }
-  
+
   #projects h1,
   #projects h3 {
     color: #1e293b;
   }
-  
+
   .user-projects p,
   .contents p,
   .contents-right p {
     color: #475569;
   }
-  
+
   .user-projects li {
     color: #0ea5e9;
   }
-  
+
   /* About section light mode styles */
   #about h1,
   #about h2 {
     color: #1e293b;
   }
-  
+
   #about p,
   .user-details p {
     color: #334155;
   }
-  
+
   /* Skills section light mode styles */
   .tech h2 {
     color: #1e293b;
   }
-  
+
   .tech p,
   .user p {
     color: #334155;
@@ -5291,7 +5291,7 @@ a img {
 }
 
 .skills-timeline-header h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -12px;
   left: 50%;
@@ -5313,7 +5313,7 @@ a img {
 }
 
 .skills-timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 30px;
   top: 0;
@@ -5417,7 +5417,7 @@ a img {
 }
 
 .progress-fill::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -5467,33 +5467,33 @@ a img {
   .skills-timeline-container {
     padding: 40px 15px;
   }
-  
+
   .skills-timeline-header h2 {
     font-size: 2.2rem;
   }
-  
+
   .skills-timeline::before {
     left: 20px;
   }
-  
+
   .skill-category {
     padding-left: 60px;
   }
-  
+
   .category-icon {
     left: -45px;
     width: 40px;
     height: 40px;
   }
-  
+
   .category-icon i {
     font-size: 1.2rem;
   }
-  
+
   .category-header h3 {
     font-size: 1.4rem;
   }
-  
+
   .skills-list {
     padding: 20px;
   }
@@ -5503,29 +5503,29 @@ a img {
   .skills-timeline-header h2 {
     font-size: 1.9rem;
   }
-  
+
   .skills-timeline::before {
     left: 15px;
   }
-  
+
   .skill-category {
     padding-left: 50px;
   }
-  
+
   .category-icon {
     left: -40px;
     width: 35px;
     height: 35px;
   }
-  
+
   .category-icon i {
     font-size: 1rem;
   }
-  
+
   .category-header h3 {
     font-size: 1.2rem;
   }
-  
+
   .skill-info {
     flex-direction: column;
     align-items: flex-start;
@@ -5590,7 +5590,11 @@ section {
 
 /* Enhanced footer styling */
 footer {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem 0;
@@ -5599,11 +5603,14 @@ footer {
 }
 
 /* Enhanced button hover effects */
-button, .btn, a[href] {
+button,
+.btn,
+a[href] {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
@@ -5634,8 +5641,141 @@ img:hover {
   * {
     animation-duration: 0.5s !important;
   }
-  
+
   section {
     animation: fadeInUp 0.6s ease-out;
+  }
+}
+
+/* ========================================
+   CONSOLIDATED NAVBAR STYLES
+   ======================================== */
+
+/* Modern Glassmorphism Navigation Bar */
+.navbar {
+  z-index: 100000;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.nav-centre {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Modern Navigation Links */
+.navbar a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.navbar a:hover::before {
+  left: 100%;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .nav-centre {
+    gap: 20px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-centre {
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* Light mode adjustments for Navbar */
+@media (prefers-color-scheme: light) {
+  .navbar {
+    background: rgba(248, 250, 252, 0.8);
+    border: 1px solid rgba(203, 213, 225, 0.3);
+  }
+
+  .navbar:hover {
+    background: rgba(248, 250, 252, 0.9);
+  }
+
+  .navbar a {
+    color: rgba(51, 65, 85, 0.9);
+  }
+
+  .navbar a:hover {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.1);
   }
 }

@@ -1,0 +1,228 @@
+/* ========================================
+   ABOUT PAGE SPECIFIC STYLES
+   ======================================== */
+
+/* Modern About Section with Card Layouts */
+#about {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 10% 20%,
+      rgba(14, 165, 233, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(168, 85, 247, 0.1) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.user-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.user-details h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b, #0ea5e9, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 60px;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-details picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  animation: scaleIn 1s ease-out 0.3s both;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.user-details img {
+  width: 200px !important;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50% !important;
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.user-details img:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 15px rgba(14, 165, 233, 0.1), 0 0 0 30px rgba(14, 165, 233, 0.05);
+}
+
+.user-details h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.user-details p {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #334155;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 1s ease-out 0.6s both;
+  transition: all 0.3s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-details p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.8s;
+}
+
+.user-details p:hover::before {
+  left: 100%;
+}
+
+.user-details p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+  #about {
+    padding: 60px 15px;
+  }
+
+  .user-details h1 {
+    font-size: 2.5rem;
+  }
+
+  .user-details img {
+    width: 150px !important;
+    height: 150px;
+  }
+
+  .user-details p {
+    padding: 25px;
+    font-size: 1rem;
+  }
+
+  .navbar {
+    width: 95%;
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .nav-centre {
+    gap: 20px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-centre {
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .navbar {
+    background: rgba(248, 250, 252, 0.8);
+    border: 1px solid rgba(203, 213, 225, 0.3);
+  }
+
+  .navbar:hover {
+    background: rgba(248, 250, 252, 0.9);
+  }
+
+  .navbar a {
+    color: rgba(51, 65, 85, 0.9);
+  }
+
+  .navbar a:hover {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.1);
+  }
+}
