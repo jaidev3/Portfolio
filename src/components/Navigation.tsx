@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import Sparkles from './Sparkles';
 import { cn } from '../lib/utils';
+import { Button } from './ui/button';
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 
 const Navigation = () => {
   const location = useLocation();
@@ -25,10 +27,6 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   return (
     <>
       <motion.div
@@ -44,7 +42,7 @@ const Navigation = () => {
       >
         <Sparkles
           className="w-full"
-          particleColor="#8b5cf6"
+          particleColor="#6b7280"
           particleDensity={0.3}
           minSize={2}
           maxSize={4}
@@ -76,34 +74,37 @@ const Navigation = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 + 0.3 }}
                     >
-                      <Link
-                        to={item.path}
+                      <Button
+                        asChild
+                        variant={isActive ? "default" : "ghost"}
                         className={cn(
-                          "relative px-6 py-3 rounded-xl transition-all duration-300 font-medium flex items-center space-x-2 group",
+                          "relative px-6 py-3 rounded-xl transition-all duration-300 font-medium flex items-center space-x-2 group h-auto",
                           isActive
-                            ? "text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
-                            : "text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+                            ? "text-white bg-gradient-to-r from-gray-600 to-gray-700 shadow-lg hover:from-gray-700 hover:to-gray-800"
+                            : "text-slate-700 hover:text-gray-600 hover:bg-slate-50"
                         )}
                       >
-                        <i className={cn(item.icon, "text-sm")} />
-                        <span>{item.label}</span>
-                        
-                        {/* Active indicator */}
-                        {isActive && (
-                          <motion.div
-                            layoutId="activeTab"
-                            className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl -z-10"
-                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                          />
-                        )}
-                        
-                        {/* Hover effect */}
-                        {!isActive && (
-                          <motion.div
-                            className="absolute inset-0 bg-slate-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
-                          />
-                        )}
-                      </Link>
+                        <Link to={item.path}>
+                          <i className={cn(item.icon, "text-sm")} />
+                          <span>{item.label}</span>
+                          
+                          {/* Active indicator */}
+                          {isActive && (
+                            <motion.div
+                              layoutId="activeTab"
+                              className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl -z-10"
+                              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                            />
+                          )}
+                          
+                          {/* Hover effect */}
+                          {!isActive && (
+                            <motion.div
+                              className="absolute inset-0 bg-slate-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                            />
+                          )}
+                        </Link>
+                      </Button>
                     </motion.div>
                   );
                 })}
@@ -112,101 +113,87 @@ const Navigation = () => {
               {/* Right side controls */}
               <div className="flex items-center space-x-4">
                 {/* Mobile menu button */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={toggleMobileMenu}
-                  className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-200"
-                  aria-label="Toggle mobile menu"
+                <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                  <SheetTrigger asChild>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="md:hidden"
+                    >
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="p-2 rounded-lg text-slate-700 hover:bg-slate-100"
+                        aria-label="Toggle mobile menu"
+                      >
+                        <motion.div
+                          animate={isMobileMenuOpen ? "open" : "closed"}
+                          className="w-6 h-6 flex flex-col justify-center items-center"
+                        >
+                          <motion.span
+                            variants={{
+                              closed: { rotate: 0, y: 0 },
+                              open: { rotate: 45, y: 6 }
+                            }}
+                            className="w-5 h-0.5 bg-current block transition-all duration-300 origin-center"
+                          />
+                          <motion.span
+                            variants={{
+                              closed: { opacity: 1 },
+                              open: { opacity: 0 }
+                            }}
+                            className="w-5 h-0.5 bg-current block mt-1.5 transition-all duration-300"
+                          />
+                          <motion.span
+                            variants={{
+                              closed: { rotate: 0, y: 0 },
+                              open: { rotate: -45, y: -6 }
+                            }}
+                            className="w-5 h-0.5 bg-current block mt-1.5 transition-all duration-300 origin-center"
+                          />
+                        </motion.div>
+                      </Button>
+                    </motion.div>
+                  </SheetTrigger>
+                  
+                  {/* Mobile Menu */}
+                  <SheetContent side="right" className="w-80 bg-white/95 backdrop-blur-md border-l border-slate-200/50">
+        <div className="p-6 pt-20">
+          <nav className="space-y-4">
+            {navItems.map((item, index) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <motion.div
+                  key={item.path}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 + 0.2 }}
                 >
-                  <motion.div
-                    animate={isMobileMenuOpen ? "open" : "closed"}
-                    className="w-6 h-6 flex flex-col justify-center items-center"
+                  <Link
+                    to={item.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      "flex items-center space-x-4 px-6 py-4 rounded-xl transition-all duration-300 font-medium",
+                      isActive
+                        ? "text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
+                        : "text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+                    )}
                   >
-                    <motion.span
-                      variants={{
-                        closed: { rotate: 0, y: 0 },
-                        open: { rotate: 45, y: 6 }
-                      }}
-                      className="w-5 h-0.5 bg-current block transition-all duration-300 origin-center"
-                    />
-                    <motion.span
-                      variants={{
-                        closed: { opacity: 1 },
-                        open: { opacity: 0 }
-                      }}
-                      className="w-5 h-0.5 bg-current block mt-1.5 transition-all duration-300"
-                    />
-                    <motion.span
-                      variants={{
-                        closed: { rotate: 0, y: 0 },
-                        open: { rotate: -45, y: -6 }
-                      }}
-                      className="w-5 h-0.5 bg-current block mt-1.5 transition-all duration-300 origin-center"
-                    />
-                  </motion.div>
-                </motion.button>
+                    <i className={cn(item.icon, "text-lg")} />
+                    <span className="text-lg">{item.label}</span>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </nav>
+        </div>
+                  </SheetContent>
+                </Sheet>
               </div>
             </div>
           </div>
         </Sparkles>
       </motion.div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-            
-            {/* Mobile menu panel */}
-            <motion.div
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "100%", opacity: 0 }}
-              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-              className="fixed top-0 right-0 h-full w-80 bg-white/95 backdrop-blur-md border-l border-slate-200/50 z-50 md:hidden"
-            >
-              <div className="p-6 pt-20">
-                <nav className="space-y-4">
-                  {navItems.map((item, index) => {
-                    const isActive = location.pathname === item.path;
-                    return (
-                      <motion.div
-                        key={item.path}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 + 0.2 }}
-                      >
-                        <Link
-                          to={item.path}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className={cn(
-                            "flex items-center space-x-4 px-6 py-4 rounded-xl transition-all duration-300 font-medium",
-                            isActive
-                              ? "text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
-                              : "text-slate-700 hover:text-blue-500 hover:bg-slate-50"
-                          )}
-                        >
-                          <i className={cn(item.icon, "text-lg")} />
-                          <span className="text-lg">{item.label}</span>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </nav>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </>
   );
 };

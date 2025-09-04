@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { cn } from '../lib/utils';
 import Sparkles from './Sparkles';
+import { Card, CardContent, CardHeader } from './ui/card';
+import { Progress } from './ui/progress';
+import { Badge } from './ui/badge';
 
 interface Skill {
   name: string;
@@ -40,45 +43,45 @@ const SkillCard: React.FC<SkillCardProps> = ({
         delay,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
-      className={cn(
+      whileHover={{ scale: 1.02, y: -8 }}
+    >
+      <Card className={cn(
         "group relative h-full flex flex-col",
         "bg-white/90 backdrop-blur-2xl",
         "border border-white/30",
-        "rounded-3xl shadow-2xl p-8",
+        "rounded-3xl shadow-2xl",
         "transition-all duration-700 ease-out",
-        "hover:shadow-3xl hover:scale-[1.02] hover:-translate-y-2",
+        "hover:shadow-3xl",
         "hover:border-white/50",
         "before:absolute before:inset-0 before:rounded-3xl",
         "before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent",
         "before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
-      )}
-    >
+      )}>
       {/* Enhanced Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/8 via-purple-500/8 to-pink-500/8 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-gray-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
       
       {/* Animated border glow */}
-      <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-sm animate-pulse" />
+      <div className="absolute -inset-0.5 rounded-3xl bg-gray-400/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-sm" />
       
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden rounded-3xl">
-        <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400/60 rounded-full animate-bounce" style={{animationDelay: '0s'}} />
-        <div className="absolute top-8 left-6 w-1.5 h-1.5 bg-purple-400/60 rounded-full animate-bounce" style={{animationDelay: '0.5s'}} />
-        <div className="absolute bottom-6 right-8 w-1 h-1 bg-pink-400/60 rounded-full animate-bounce" style={{animationDelay: '1s'}} />
+        <div className="absolute top-4 right-4 w-2 h-2 bg-gray-400/40 rounded-full animate-bounce" style={{animationDelay: '0s'}} />
+        <div className="absolute top-8 left-6 w-1.5 h-1.5 bg-gray-500/40 rounded-full animate-bounce" style={{animationDelay: '0.5s'}} />
+        <div className="absolute bottom-6 right-8 w-1 h-1 bg-gray-600/40 rounded-full animate-bounce" style={{animationDelay: '1s'}} />
       </div>
       
       {/* Content */}
-      <div className="relative z-10">
-        {/* Enhanced Header */}
-        <div className="flex flex-col items-center justify-center mb-10">
+      <div className="relative z-10 p-8">
+        <CardHeader className="flex flex-col items-center justify-center mb-10 p-0">
           <Sparkles 
             className="relative mb-6"
-            particleColor="#0ea5e9"
-            particleDensity={4}
-            minSize={3}
-            maxSize={10}
+            particleColor="#6b7280"
+            particleDensity={2}
+            minSize={2}
+            maxSize={6}
           >
             <motion.div 
-              className="w-20 h-20 bg-gradient-to-br from-sky-400 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl ring-4 ring-sky-400/40 relative overflow-hidden"
+              className="w-20 h-20 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center shadow-2xl ring-4 ring-gray-400/40 relative overflow-hidden"
               whileHover={{ scale: 1.15, rotate: 10 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
@@ -111,10 +114,9 @@ const SkillCard: React.FC<SkillCardProps> = ({
             animate={isVisible ? { scaleX: 1 } : { scaleX: 0 }}
             transition={{ duration: 0.8, delay: delay + 0.4 }}
           />
-        </div>
+        </CardHeader>
 
-        {/* Enhanced Skills */}
-        <div className="flex-1 space-y-5">
+        <CardContent className="flex-1 space-y-5 p-0">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -131,33 +133,33 @@ const SkillCard: React.FC<SkillCardProps> = ({
                   <span className="text-lg font-semibold text-slate-700 group-hover/skill:text-sky-600 transition-colors duration-300">
                     {skill.name}
                   </span>
-                  <motion.span 
-                    className="text-sm font-bold text-white bg-gradient-to-r from-sky-500 to-purple-600 px-4 py-2 rounded-full shadow-lg ring-2 ring-sky-400/30"
+                  <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    {skill.percentage}%
-                  </motion.span>
+                    <Badge 
+                      className="text-sm font-bold text-white bg-gradient-to-r from-sky-500 to-purple-600 px-4 py-2 rounded-full shadow-lg ring-2 ring-sky-400/30"
+                    >
+                      {skill.percentage}%
+                    </Badge>
+                  </motion.div>
                 </div>
                 
                 {/* Enhanced Progress bar */}
-                <div className="relative h-4 bg-gradient-to-r from-slate-200 to-slate-300 rounded-full overflow-hidden shadow-inner">
-                  {/* Background shimmer */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/skill:translate-x-full transition-transform duration-1500" />
-                  
-                  {/* Progress fill */}
+                <div className="relative">
                   <motion.div
-                    className="h-full bg-gradient-to-r from-sky-400 via-blue-500 to-purple-600 rounded-full relative overflow-hidden shadow-lg"
-                    initial={{ width: 0 }}
-                    animate={isVisible ? { width: `${skill.percentage}%` } : { width: 0 }}
-                    transition={{ duration: 1.5, delay: delay + 0.6 + (index * 0.1), ease: "easeOut" }}
+                    initial={{ opacity: 0 }}
+                    animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ duration: 1.5, delay: delay + 0.6 + (index * 0.1) }}
                   >
-                    {/* Enhanced shimmer effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
-                    
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/20 rounded-full" />
+                    <Progress 
+                      value={isVisible ? skill.percentage : 0}
+                      className="h-4 bg-gradient-to-r from-slate-200 to-slate-300 rounded-full overflow-hidden shadow-inner"
+                    />
                   </motion.div>
+                  
+                  {/* Background shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/skill:translate-x-full transition-transform duration-1500 rounded-full" />
                   
                   {/* Progress indicator dot */}
                   <motion.div
@@ -171,8 +173,9 @@ const SkillCard: React.FC<SkillCardProps> = ({
               </div>
             </motion.div>
           ))}
-        </div>
+        </CardContent>
       </div>
+      </Card>
     </motion.div>
   );
 };

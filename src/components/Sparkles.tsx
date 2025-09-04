@@ -47,7 +47,7 @@ const Sparkles: React.FC<SparklesProps> = ({
   minSize = 10,
   maxSize = 20,
   particleDensity = 1.2,
-  particleColor = '#FFC700',
+  particleColor = '#6b7280',
   children,
 }) => {
   const [sparkles, setSparkles] = useState<SparkleProps[]>([]);

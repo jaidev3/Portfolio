@@ -154,7 +154,7 @@ const Skills = () => {
       <Sparkles
         id="skills-particles"
         className="absolute inset-0"
-        particleColor="#0ea5e9"
+        particleColor="#6b7280"
         particleDensity={2}
         minSize={2}
         maxSize={6}

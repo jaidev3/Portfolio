@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { cn } from '../lib/utils';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
 
 interface Project {
   title: string;
@@ -25,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
   const isEven = index % 2 === 0;
 
   return (
-    <motion.article
+    <motion.div
       initial={{ opacity: 0, y: 100, scale: 0.8 }}
       animate={isVisible ? {
         opacity: 1,
@@ -45,15 +48,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
         scale: 1.02,
         transition: { duration: 0.3 }
       }}
-      className={cn(
+    >
+      <Card className={cn(
         "group relative overflow-hidden",
         "bg-white/80 backdrop-blur-xl",
         "border border-white/20",
         "rounded-3xl shadow-2xl",
         "transition-all duration-500",
         "hover:shadow-3xl hover:border-white/40"
-      )}
-    >
+      )}>
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
@@ -104,30 +107,39 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
               whileHover={{ opacity: 1 }}
             >
               <div className="flex space-x-4">
-                <motion.a
-                  href={project.liveDemo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label={`View ${project.title} demo`}
-                >
-                  <i className="fas fa-external-link-alt" />
-                  <span>Live Demo</span>
-                </motion.a>
-                <motion.a
-                  href={project.sourceCode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label={`View ${project.title} source code`}
-                >
-                  <i className="fab fa-github" />
-                  <span>Source Code</span>
-                </motion.a>
+                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    asChild
+                    className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg"
+                  >
+                    <a
+                      href={project.liveDemo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} demo`}
+                    >
+                      <i className="fas fa-external-link-alt" />
+                      <span>Live Demo</span>
+                    </a>
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    asChild
+                    variant="secondary"
+                    className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg"
+                  >
+                    <a
+                      href={project.sourceCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} source code`}
+                    >
+                      <i className="fab fa-github" />
+                      <span>Source Code</span>
+                    </a>
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>
@@ -154,9 +166,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
               className="inline-block mb-4"
               whileHover={{ scale: 1.05 }}
             >
-              <span className="bg-gradient-to-r from-emerald-100 to-blue-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200/50">
+              <Badge 
+                variant="secondary"
+                className="bg-gradient-to-r from-emerald-100 to-blue-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200/50"
+              >
                 {project.category}
-              </span>
+              </Badge>
             </motion.div>
 
             {/* Title */}
@@ -197,13 +212,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
               }}
             >
               {project.technologies.map((tech, techIndex) => (
-                <motion.span
+                <motion.div
                   key={techIndex}
-                  className="bg-slate-100/80 backdrop-blur-sm text-slate-700 px-4 py-2 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 border border-slate-200/50"
                   whileHover={{
                     scale: 1.05,
-                    backgroundColor: "rgba(59, 130, 246, 0.1)",
-                    borderColor: "rgba(59, 130, 246, 0.3)"
                   }}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isVisible ? {
@@ -218,15 +230,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
                     delay: index * 0.2 + 0.8 + (techIndex * 0.1)
                   }}
                 >
-                  <i className={tech.icon} />
-                  <span>{tech.name}</span>
-                </motion.span>
+                  <Badge
+                    variant="outline"
+                    className="bg-slate-100/80 backdrop-blur-sm text-slate-700 px-4 py-2 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 border border-slate-200/50 hover:bg-blue-50 hover:border-blue-300"
+                  >
+                    <i className={tech.icon} />
+                    <span>{tech.name}</span>
+                  </Badge>
+                </motion.div>
               ))}
             </motion.div>
           </motion.div>
         </div>
       </div>
-    </motion.article>
+      </Card>
+    </motion.div>
   );
 };
 

@@ -30,7 +30,7 @@ const About = () => {
       description:
         "Started my engineering degree, where I was first exposed to programming and technology. The vast resources and knowledge available fascinated me.",
       icon: "fas fa-graduation-cap",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-gray-600 to-gray-700",
     },
     {
       year: "2020",
@@ -38,7 +38,7 @@ const About = () => {
       description:
         "During the pandemic, I dove deep into learning about new technologies. This period gave me a massive boost to explore the coding industry.",
       icon: "fas fa-book-open",
-      color: "from-green-500 to-emerald-500",
+      color: "from-gray-600 to-gray-700",
     },
     {
       year: "2021",
@@ -46,7 +46,7 @@ const About = () => {
       description:
         "Joined Masai School to learn the MERN stack. Discovered that coding is an ever-growing field with endless possibilities for innovation.",
       icon: "fas fa-code",
-      color: "from-purple-500 to-pink-500",
+      color: "from-gray-600 to-gray-700",
     },
     {
       year: "2022",
@@ -54,7 +54,7 @@ const About = () => {
       description:
         "Became proficient in HTML, CSS, JavaScript, MongoDB, React, and Node.js. Started building real-world applications and projects.",
       icon: "fas fa-laptop-code",
-      color: "from-orange-500 to-red-500",
+      color: "from-gray-600 to-gray-700",
     },
     {
       year: "2023",
@@ -62,7 +62,7 @@ const About = () => {
       description:
         "Continuing to grow as a developer, exploring new technologies, and building innovative solutions. Always learning, always creating.",
       icon: "fas fa-rocket",
-      color: "from-indigo-500 to-purple-500",
+      color: "from-gray-600 to-gray-700",
     },
     {
       year: "2024",
@@ -70,7 +70,7 @@ const About = () => {
       description:
         "Expanded into AI and Machine Learning, mastering Python, TensorFlow, and various AI frameworks. Building intelligent applications that bridge the gap between traditional web development and artificial intelligence.",
       icon: "fas fa-brain",
-      color: "from-cyan-500 to-blue-500",
+      color: "from-gray-600 to-gray-700",
     },
   ];
 
@@ -86,17 +86,17 @@ const About = () => {
   ];
 
   const hobbies = [
-    { name: "Traveling", icon: "fas fa-plane", color: "text-blue-500" },
+    { name: "Traveling", icon: "fas fa-plane", color: "text-gray-600" },
     {
       name: "Table Tennis",
       icon: "fas fa-table-tennis",
-      color: "text-green-500",
+      color: "text-gray-600",
     },
-    { name: "Badminton", icon: "fas fa-shuttlecock", color: "text-purple-500" },
+    { name: "Badminton", icon: "fas fa-shuttlecock", color: "text-gray-600" },
     {
       name: "Reading Tech Blogs",
       icon: "fas fa-blog",
-      color: "text-orange-500",
+      color: "text-gray-600",
     },
   ];
 
@@ -138,7 +138,7 @@ const About = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 transition-colors duration-300 relative overflow-hidden pt-20">
       <Sparkles
         className="absolute inset-0"
-        particleColor="#f59e0b"
+        particleColor="#6b7280"
         particleDensity={1}
         minSize={4}
         maxSize={8}

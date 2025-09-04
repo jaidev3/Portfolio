@@ -105,7 +105,7 @@ const Projects = () => {
       <Sparkles
         id="projects-particles"
         className="absolute inset-0"
-        particleColor="#10b981"
+        particleColor="#6b7280"
         particleDensity={1}
         minSize={3}
         maxSize={8}
