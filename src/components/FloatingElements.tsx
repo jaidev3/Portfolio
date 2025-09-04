@@ -16,7 +16,7 @@ const FloatingElements: React.FC = () => {
       {elements.map((element) => (
         <motion.div
           key={element.id}
-          className="absolute rounded-full bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-pink-400/20 blur-xl"
+          className="absolute rounded-full bg-black/10 blur-xl"
           style={{
             width: element.size,
             height: element.size,
@@ -40,7 +40,7 @@ const FloatingElements: React.FC = () => {
       
       {/* Geometric shapes */}
       <motion.div
-        className="absolute top-20 left-10 w-4 h-4 border-2 border-blue-400/40 rotate-45"
+        className="absolute top-20 left-10 w-4 h-4 border-2 border-black/40 rotate-45"
         animate={{
           rotate: [45, 225, 45],
           scale: [1, 1.5, 1]
@@ -53,7 +53,7 @@ const FloatingElements: React.FC = () => {
       />
       
       <motion.div
-        className="absolute top-40 right-20 w-6 h-6 rounded-full border-2 border-purple-400/40"
+        className="absolute top-40 right-20 w-6 h-6 rounded-full border-2 border-black/40"
         animate={{
           scale: [1, 1.8, 1],
           opacity: [0.4, 0.8, 0.4]
@@ -66,7 +66,7 @@ const FloatingElements: React.FC = () => {
       />
       
       <motion.div
-        className="absolute bottom-32 left-1/4 w-3 h-12 bg-gradient-to-t from-pink-400/30 to-transparent"
+        className="absolute bottom-32 left-1/4 w-3 h-12 bg-gradient-to-t from-black/30 to-transparent"
         animate={{
           scaleY: [1, 1.5, 1],
           opacity: [0.3, 0.7, 0.3]

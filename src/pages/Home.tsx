@@ -8,10 +8,10 @@ import FloatingElements from "../components/FloatingElements";
 const Home: React.FC = () => {
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 transition-colors duration-300 relative overflow-hidden">
+    <div className="min-h-screen bg-white transition-colors duration-300 relative overflow-hidden">
       <Sparkles
         className="absolute inset-0"
-        particleColor="#6b7280"
+        particleColor="#000000"
         particleDensity={0.8}
         minSize={4}
         maxSize={8}
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-300/20 to-gray-400/20 rounded-full blur-xl" />
+                <div className="absolute inset-0 bg-black/10 rounded-full blur-xl" />
                 <picture>
                   <source
                     type="image/webp"
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
                   <img
                     src="/assets/img/jpg/jaidevimg.jpg"
                     alt="Jaidev Yadav - Professional Photo"
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-gray-300/50 relative z-10"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-black/20 relative z-10"
                   />
                 </picture>
               </motion.div>
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/jaidev-y-558691183/"
-                className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-slate-800 text-slate-800 hover:bg-gray-600 hover:border-gray-600 hover:text-white transition-all duration-300"
+                className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-black text-black hover:bg-black hover:border-black hover:text-white transition-all duration-300"
               >
                 <i className="fab fa-linkedin text-xl" aria-hidden="true"></i>
               </a>
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://github.com/jaidev3"
-                className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-slate-800 text-slate-800 hover:bg-gray-600 hover:border-gray-600 hover:text-white transition-all duration-300"
+                className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-black text-black hover:bg-black hover:border-black hover:text-white transition-all duration-300"
               >
                 <i className="fab fa-github-alt text-xl" aria-hidden="true"></i>
               </a>

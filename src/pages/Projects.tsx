@@ -99,13 +99,13 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 pt-20 transition-colors duration-300 relative overflow-hidden">
+    <div className="min-h-screen bg-white pt-20 transition-colors duration-300 relative overflow-hidden">
       <FloatingElements />
 
       <Sparkles
         id="projects-particles"
         className="absolute inset-0"
-        particleColor="#6b7280"
+        particleColor="#000000"
         particleDensity={1}
         minSize={3}
         maxSize={8}
@@ -113,10 +113,10 @@ const Projects = () => {
       >
         <main className="max-w-7xl mx-auto px-4 py-16 relative z-10">
           <header className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 transition-colors duration-300">
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 transition-colors duration-300">
               Featured Projects
             </h1>
-            <p className="text-xl text-slate-600 transition-colors duration-300">
+            <p className="text-xl text-black transition-colors duration-300">
               Explore my latest work and creative solutions
             </p>
           </header>

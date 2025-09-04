@@ -55,13 +55,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
         "border border-white/20",
         "rounded-3xl shadow-2xl",
         "transition-all duration-500",
-        "hover:shadow-3xl hover:border-white/40"
+        "hover:shadow-xl hover:border-slate-200"
       )}>
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      {/* Animated border */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+      {/* Simple hover overlay */}
+      <div className="absolute inset-0 bg-slate-50/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <div className={cn(
         "lg:flex relative z-10",
@@ -110,7 +107,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     asChild
-                    className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg"
+                    className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg"
                   >
                     <a
                       href={project.liveDemo}
@@ -168,7 +165,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
             >
               <Badge 
                 variant="secondary"
-                className="bg-gradient-to-r from-emerald-100 to-blue-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200/50"
+                className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium border border-black"
               >
                 {project.category}
               </Badge>
@@ -176,7 +173,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
 
             {/* Title */}
             <motion.h3
-              className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4 transition-colors duration-300"
+              className="text-2xl lg:text-3xl font-bold text-black mb-4 transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
             >
               {project.title}
@@ -184,7 +181,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
 
             {/* Description */}
             <motion.p
-              className="text-slate-600 text-lg leading-relaxed mb-6 transition-colors duration-300"
+              className="text-black text-lg leading-relaxed mb-6 transition-colors duration-300"
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
               transition={{
@@ -232,7 +229,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
                 >
                   <Badge
                     variant="outline"
-                    className="bg-slate-100/80 backdrop-blur-sm text-slate-700 px-4 py-2 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 border border-slate-200/50 hover:bg-blue-50 hover:border-blue-300"
+                    className="bg-white backdrop-blur-sm text-black px-4 py-2 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 border border-black hover:bg-black hover:text-white hover:border-black"
                   >
                     <i className={tech.icon} />
                     <span>{tech.name}</span>

@@ -30,7 +30,7 @@ const About = () => {
       description:
         "Started my engineering degree, where I was first exposed to programming and technology. The vast resources and knowledge available fascinated me.",
       icon: "fas fa-graduation-cap",
-      color: "from-gray-600 to-gray-700",
+      color: "from-black to-gray-800",
     },
     {
       year: "2020",
@@ -38,7 +38,7 @@ const About = () => {
       description:
         "During the pandemic, I dove deep into learning about new technologies. This period gave me a massive boost to explore the coding industry.",
       icon: "fas fa-book-open",
-      color: "from-gray-600 to-gray-700",
+      color: "from-black to-gray-800",
     },
     {
       year: "2021",
@@ -46,7 +46,7 @@ const About = () => {
       description:
         "Joined Masai School to learn the MERN stack. Discovered that coding is an ever-growing field with endless possibilities for innovation.",
       icon: "fas fa-code",
-      color: "from-gray-600 to-gray-700",
+      color: "from-black to-gray-800",
     },
     {
       year: "2022",
@@ -54,7 +54,7 @@ const About = () => {
       description:
         "Became proficient in HTML, CSS, JavaScript, MongoDB, React, and Node.js. Started building real-world applications and projects.",
       icon: "fas fa-laptop-code",
-      color: "from-gray-600 to-gray-700",
+      color: "from-black to-gray-800",
     },
     {
       year: "2023",
@@ -62,7 +62,7 @@ const About = () => {
       description:
         "Continuing to grow as a developer, exploring new technologies, and building innovative solutions. Always learning, always creating.",
       icon: "fas fa-rocket",
-      color: "from-gray-600 to-gray-700",
+      color: "from-black to-gray-800",
     },
     {
       year: "2024",
@@ -70,7 +70,7 @@ const About = () => {
       description:
         "Expanded into AI and Machine Learning, mastering Python, TensorFlow, and various AI frameworks. Building intelligent applications that bridge the gap between traditional web development and artificial intelligence.",
       icon: "fas fa-brain",
-      color: "from-gray-600 to-gray-700",
+      color: "from-black to-gray-800",
     },
   ];
 
@@ -135,10 +135,10 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 transition-colors duration-300 relative overflow-hidden pt-20">
+    <div className="min-h-screen bg-white transition-colors duration-300 relative overflow-hidden pt-20">
       <Sparkles
         className="absolute inset-0"
-        particleColor="#6b7280"
+        particleColor="#000000"
         particleDensity={1}
         minSize={4}
         maxSize={8}
@@ -151,7 +151,7 @@ const About = () => {
           <div className="text-center mb-16">
             <FloatingCard className="inline-block p-8 mb-8" delay={0.3}>
               <motion.div whileHover={{ scale: 1.05 }} className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-orange-400/20 rounded-full blur-xl" />
+                <div className="absolute inset-0 bg-black/10 rounded-full blur-xl" />
                 <picture>
                   <source
                     type="image/webp"
@@ -160,7 +160,7 @@ const About = () => {
                   <img
                     src="/assets/img/jpg/jaidevimg.jpg"
                     alt="Professional Me"
-                    className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-amber-400/50 relative z-10"
+                    className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-black/20 relative z-10"
                   />
                 </picture>
               </motion.div>

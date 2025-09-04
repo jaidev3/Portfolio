@@ -44,15 +44,12 @@ const FloatingCard: React.FC<FloatingCardProps> = ({
         "border border-white/20",
         "rounded-2xl shadow-xl",
         "transition-all duration-300",
-        "hover:shadow-2xl hover:border-white/40",
+        "hover:shadow-xl hover:border-slate-200",
         className
       )}
     >
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      {/* Animated border */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+      {/* Simple hover overlay */}
+      <div className="absolute inset-0 bg-slate-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Content */}
       <div className="relative z-10">

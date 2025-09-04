@@ -42,7 +42,7 @@ const Navigation = () => {
       >
         <Sparkles
           className="w-full"
-          particleColor="#6b7280"
+          particleColor="#000000"
           particleDensity={0.3}
           minSize={2}
           maxSize={4}
@@ -80,8 +80,8 @@ const Navigation = () => {
                         className={cn(
                           "relative px-6 py-3 rounded-xl transition-all duration-300 font-medium flex items-center space-x-2 group h-auto",
                           isActive
-                            ? "text-white bg-gradient-to-r from-gray-600 to-gray-700 shadow-lg hover:from-gray-700 hover:to-gray-800"
-                            : "text-slate-700 hover:text-gray-600 hover:bg-slate-50"
+                            ? "text-white bg-slate-700 shadow-lg hover:bg-slate-800"
+                            : "text-slate-700 hover:text-slate-800 hover:bg-slate-100"
                         )}
                       >
                         <Link to={item.path}>
@@ -92,7 +92,7 @@ const Navigation = () => {
                           {isActive && (
                             <motion.div
                               layoutId="activeTab"
-                              className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl -z-10"
+                              className="absolute inset-0 bg-slate-700 rounded-xl -z-10"
                               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                             />
                           )}
@@ -175,8 +175,8 @@ const Navigation = () => {
                     className={cn(
                       "flex items-center space-x-4 px-6 py-4 rounded-xl transition-all duration-300 font-medium",
                       isActive
-                        ? "text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
-                        : "text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+                        ? "text-white bg-slate-700 shadow-lg"
+                        : "text-slate-700 hover:text-slate-800 hover:bg-slate-100"
                     )}
                   >
                     <i className={cn(item.icon, "text-lg")} />
