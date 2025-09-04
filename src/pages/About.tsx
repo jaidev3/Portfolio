@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import Sparkles from "../components/Sparkles";
 import FloatingCard from "../components/FloatingCard";
@@ -63,6 +63,14 @@ const About = () => {
         "Continuing to grow as a developer, exploring new technologies, and building innovative solutions. Always learning, always creating.",
       icon: "fas fa-rocket",
       color: "from-indigo-500 to-purple-500",
+    },
+    {
+      year: "2024",
+      title: "AI & Machine Learning",
+      description:
+        "Expanded into AI and Machine Learning, mastering Python, TensorFlow, and various AI frameworks. Building intelligent applications that bridge the gap between traditional web development and artificial intelligence.",
+      icon: "fas fa-brain",
+      color: "from-cyan-500 to-blue-500",
     },
   ];
 
@@ -170,7 +178,7 @@ const About = () => {
                 transition={{ delay: 0.8 }}
                 className="text-lg text-slate-600 mt-2"
               >
-                Full Stack Developer & Creative Thinker
+                Full Stack Developer & AI Enthusiast
               </motion.p>
             </FloatingCard>
           </div>
@@ -333,7 +341,10 @@ const About = () => {
                 down I started reading about new technology, which gave me a
                 massive boost to learn more about the industry and pursue a
                 career. With the same fascination that drove me as kid, I am
-                learning and growing in the MERN stack development.
+                learning and growing in the MERN stack development. Recently, I've
+                expanded my expertise into AI and Machine Learning, exploring
+                technologies like Python, TensorFlow, and various AI frameworks
+                to build intelligent applications that solve real-world problems.
               </p>
             </motion.div>
           </FloatingCard>

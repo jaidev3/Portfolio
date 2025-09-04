@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import LoadingSpinner from './LoadingSpinner';
-import { cn } from '../lib/utils';
 
 interface GlobalLoaderProps {
   isLoading: boolean;

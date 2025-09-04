@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LoadingProvider, useLoading } from "./contexts/LoadingContext";
+import { LoadingProvider } from "./contexts/LoadingContext";
+import { useLoading } from "./hooks/useLoading";
 import Navigation from "./components/Navigation";
 import PageTransition from "./components/PageTransition";
 import GlobalLoader from "./components/GlobalLoader";

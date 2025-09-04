@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import Sparkles from "../components/Sparkles";
 import FloatingCard from "../components/FloatingCard";
@@ -6,29 +6,9 @@ import AnimatedText from "../components/AnimatedText";
 import FloatingElements from "../components/FloatingElements";
 
 const Home: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const observerRef = useRef<HTMLDivElement>(null);
-
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (observerRef.current) {
-      observer.observe(observerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <div ref={observerRef} className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 transition-colors duration-300 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 transition-colors duration-300 relative overflow-hidden">
       <Sparkles
         className="absolute inset-0"
         particleColor="#0ea5e9"
@@ -123,7 +103,7 @@ const Home: React.FC = () => {
 // Declare global particlesJS for TypeScript
 declare global {
   interface Window {
-    particlesJS: any;
+    particlesJS: (id: string, config: object) => void;
   }
 }
 
