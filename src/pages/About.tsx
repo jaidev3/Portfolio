@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
-import Sparkles from '../components/Sparkles';
-import FloatingCard from '../components/FloatingCard';
-import FloatingElements from '../components/FloatingElements';
-import { cn } from '../lib/utils';
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
+import Sparkles from "../components/Sparkles";
+import FloatingCard from "../components/FloatingCard";
+import FloatingElements from "../components/FloatingElements";
+import { cn } from "../lib/utils";
 
 interface TimelineItem {
   year: string;
@@ -25,54 +25,71 @@ const About = () => {
 
   const timelineData: TimelineItem[] = [
     {
-      year: '2018',
-      title: 'Engineering Journey Begins',
-      description: 'Started my engineering degree, where I was first exposed to programming and technology. The vast resources and knowledge available fascinated me.',
-      icon: 'fas fa-graduation-cap',
-      color: 'from-blue-500 to-cyan-500'
+      year: "2018",
+      title: "Engineering Journey Begins",
+      description:
+        "Started my engineering degree, where I was first exposed to programming and technology. The vast resources and knowledge available fascinated me.",
+      icon: "fas fa-graduation-cap",
+      color: "from-blue-500 to-cyan-500",
     },
     {
-      year: '2020',
-      title: 'Lockdown Learning',
-      description: 'During the pandemic, I dove deep into learning about new technologies. This period gave me a massive boost to explore the coding industry.',
-      icon: 'fas fa-book-open',
-      color: 'from-green-500 to-emerald-500'
+      year: "2020",
+      title: "Lockdown Learning",
+      description:
+        "During the pandemic, I dove deep into learning about new technologies. This period gave me a massive boost to explore the coding industry.",
+      icon: "fas fa-book-open",
+      color: "from-green-500 to-emerald-500",
     },
     {
-      year: '2021',
-      title: 'MERN Stack Mastery',
-      description: 'Joined Masai School to learn the MERN stack. Discovered that coding is an ever-growing field with endless possibilities for innovation.',
-      icon: 'fas fa-code',
-      color: 'from-purple-500 to-pink-500'
+      year: "2021",
+      title: "MERN Stack Mastery",
+      description:
+        "Joined Masai School to learn the MERN stack. Discovered that coding is an ever-growing field with endless possibilities for innovation.",
+      icon: "fas fa-code",
+      color: "from-purple-500 to-pink-500",
     },
     {
-      year: '2022',
-      title: 'Full Stack Developer',
-      description: 'Became proficient in HTML, CSS, JavaScript, MongoDB, React, and Node.js. Started building real-world applications and projects.',
-      icon: 'fas fa-laptop-code',
-      color: 'from-orange-500 to-red-500'
+      year: "2022",
+      title: "Full Stack Developer",
+      description:
+        "Became proficient in HTML, CSS, JavaScript, MongoDB, React, and Node.js. Started building real-world applications and projects.",
+      icon: "fas fa-laptop-code",
+      color: "from-orange-500 to-red-500",
     },
     {
-      year: '2023',
-      title: 'Professional Growth',
-      description: 'Continuing to grow as a developer, exploring new technologies, and building innovative solutions. Always learning, always creating.',
-      icon: 'fas fa-rocket',
-      color: 'from-indigo-500 to-purple-500'
-    }
+      year: "2023",
+      title: "Professional Growth",
+      description:
+        "Continuing to grow as a developer, exploring new technologies, and building innovative solutions. Always learning, always creating.",
+      icon: "fas fa-rocket",
+      color: "from-indigo-500 to-purple-500",
+    },
   ];
 
   const personalInfo: PersonalInfo[] = [
-    { label: 'Location', value: 'India', icon: 'fas fa-map-marker-alt' },
-    { label: 'Experience', value: '3+ Years', icon: 'fas fa-briefcase' },
-    { label: 'Projects', value: '15+ Completed', icon: 'fas fa-project-diagram' },
-    { label: 'Passion', value: 'Creating & Learning', icon: 'fas fa-heart' }
+    { label: "Location", value: "India", icon: "fas fa-map-marker-alt" },
+    { label: "Experience", value: "3+ Years", icon: "fas fa-briefcase" },
+    {
+      label: "Projects",
+      value: "15+ Completed",
+      icon: "fas fa-project-diagram",
+    },
+    { label: "Passion", value: "Creating & Learning", icon: "fas fa-heart" },
   ];
 
   const hobbies = [
-    { name: 'Traveling', icon: 'fas fa-plane', color: 'text-blue-500' },
-    { name: 'Table Tennis', icon: 'fas fa-table-tennis', color: 'text-green-500' },
-    { name: 'Badminton', icon: 'fas fa-shuttlecock', color: 'text-purple-500' },
-    { name: 'Reading Tech Blogs', icon: 'fas fa-blog', color: 'text-orange-500' }
+    { name: "Traveling", icon: "fas fa-plane", color: "text-blue-500" },
+    {
+      name: "Table Tennis",
+      icon: "fas fa-table-tennis",
+      color: "text-green-500",
+    },
+    { name: "Badminton", icon: "fas fa-shuttlecock", color: "text-purple-500" },
+    {
+      name: "Reading Tech Blogs",
+      icon: "fas fa-blog",
+      color: "text-orange-500",
+    },
   ];
 
   useEffect(() => {
@@ -80,18 +97,22 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const itemIndex = parseInt(entry.target.getAttribute('data-item') || '0');
+            const itemIndex = parseInt(
+              entry.target.getAttribute("data-item") || "0"
+            );
             setVisibleItems((prev) => new Set([...prev, itemIndex]));
           }
         });
       },
       {
         threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px',
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
-    const itemElements = document.querySelectorAll('.timeline-item, .info-card');
+    const itemElements = document.querySelectorAll(
+      ".timeline-item, .info-card"
+    );
     itemElements.forEach((el) => {
       if (observerRef.current) {
         observerRef.current.observe(el);
@@ -115,24 +136,12 @@ const About = () => {
         maxSize={8}
       >
         <FloatingElements />
-        
+
         {/* Hero Section */}
         <section className="max-w-6xl mx-auto px-4 py-16">
           <div className="text-center mb-16">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold text-slate-800 dark:text-slate-100 mb-8 transition-colors duration-300"
-            >
-              My Story
-            </motion.h1>
-            
             <FloatingCard className="inline-block p-8 mb-8" delay={0.3}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative"
-              >
+              <motion.div whileHover={{ scale: 1.05 }} className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-orange-400/20 rounded-full blur-xl" />
                 <picture>
                   <source
@@ -177,10 +186,12 @@ const About = () => {
                 data-item={index}
               >
                 <FloatingCard className="text-center p-6 h-full" hover={true}>
-                  <div className={cn(
-                    "w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center",
-                    "bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-blue-600 dark:text-blue-400"
-                  )}>
+                  <div
+                    className={cn(
+                      "w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center",
+                      "bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-blue-600 dark:text-blue-400"
+                    )}
+                  >
                     <i className={cn(info.icon, "text-xl")} />
                   </div>
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">
@@ -204,47 +215,57 @@ const About = () => {
             >
               My Journey
             </motion.h2>
-            
+
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full opacity-30" />
-              
+
               {timelineData.map((item, index) => {
                 const isVisible = visibleItems.has(index);
                 const isEven = index % 2 === 0;
-                
+
                 return (
                   <motion.div
                     key={item.year}
                     className="timeline-item relative mb-16 last:mb-0"
                     data-item={index}
                     initial={{ opacity: 0, x: isEven ? -100 : 100 }}
-                    animate={isVisible ? {
-                      opacity: 1,
-                      x: 0
-                    } : {
-                      opacity: 0,
-                      x: isEven ? -100 : 100
-                    }}
+                    animate={
+                      isVisible
+                        ? {
+                            opacity: 1,
+                            x: 0,
+                          }
+                        : {
+                            opacity: 0,
+                            x: isEven ? -100 : 100,
+                          }
+                    }
                     transition={{
                       duration: 0.8,
-                      delay: index * 0.2
+                      delay: index * 0.2,
                     }}
                   >
-                    <div className={cn(
-                      "flex items-center",
-                      isEven ? "flex-row" : "flex-row-reverse"
-                    )}>
+                    <div
+                      className={cn(
+                        "flex items-center",
+                        isEven ? "flex-row" : "flex-row-reverse"
+                      )}
+                    >
                       {/* Content */}
-                      <div className={cn(
-                        "w-5/12",
-                        isEven ? "pr-8 text-right" : "pl-8 text-left"
-                      )}>
+                      <div
+                        className={cn(
+                          "w-5/12",
+                          isEven ? "pr-8 text-right" : "pl-8 text-left"
+                        )}
+                      >
                         <FloatingCard className="p-6" hover={true}>
-                          <div className={cn(
-                            "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4",
-                            `bg-gradient-to-r ${item.color} text-white`
-                          )}>
+                          <div
+                            className={cn(
+                              "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4",
+                              `bg-gradient-to-r ${item.color} text-white`
+                            )}
+                          >
                             <i className={cn(item.icon, "mr-2")} />
                             {item.year}
                           </div>
@@ -256,7 +277,7 @@ const About = () => {
                           </p>
                         </FloatingCard>
                       </div>
-                      
+
                       {/* Timeline dot */}
                       <div className="w-2/12 flex justify-center">
                         <motion.div
@@ -265,17 +286,21 @@ const About = () => {
                             `bg-gradient-to-r ${item.color}`
                           )}
                           whileHover={{ scale: 1.5 }}
-                          animate={isVisible ? {
-                            scale: [0, 1.2, 1],
-                            rotate: [0, 180, 360]
-                          } : { scale: 0 }}
+                          animate={
+                            isVisible
+                              ? {
+                                  scale: [0, 1.2, 1],
+                                  rotate: [0, 180, 360],
+                                }
+                              : { scale: 0 }
+                          }
                           transition={{
                             duration: 0.6,
-                            delay: index * 0.2 + 0.3
+                            delay: index * 0.2 + 0.3,
                           }}
                         />
                       </div>
-                      
+
                       {/* Spacer */}
                       <div className="w-5/12" />
                     </div>
@@ -297,16 +322,17 @@ const About = () => {
                 About Me
               </h3>
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-                Ever since I was a kid, creating new things always got me excited.
-                However, at that time I didn't have enough resources to pursue the
-                same. That passion drove me to pursue engineering, where I was exposed
-                to a plethora of resources and knowledge. I was fascinated by the
-                evolving technology, which was developing new and innovative ideas
-                every now and then. In the beginning, it was difficult to get used to
-                coding, however, during the lock down I started reading about new
-                technology, which gave me a massive boost to learn more about the
-                industry and pursue a career. With the same fascination that drove me
-                as kid, I am learning and growing in the MERN stack development.
+                Ever since I was a kid, creating new things always got me
+                excited. However, at that time I didn't have enough resources to
+                pursue the same. That passion drove me to pursue engineering,
+                where I was exposed to a plethora of resources and knowledge. I
+                was fascinated by the evolving technology, which was developing
+                new and innovative ideas every now and then. In the beginning,
+                it was difficult to get used to coding, however, during the lock
+                down I started reading about new technology, which gave me a
+                massive boost to learn more about the industry and pursue a
+                career. With the same fascination that drove me as kid, I am
+                learning and growing in the MERN stack development.
               </p>
             </motion.div>
           </FloatingCard>
@@ -321,7 +347,7 @@ const About = () => {
             >
               Beyond Coding
             </motion.h3>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {hobbies.map((hobby, index) => (
                 <motion.div

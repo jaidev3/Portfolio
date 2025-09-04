@@ -41,105 +41,133 @@ const SkillCard: React.FC<SkillCardProps> = ({
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
       className={cn(
-        "group relative",
-        "bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl",
-        "border border-white/20 dark:border-slate-700/50",
-        "rounded-3xl shadow-xl p-8",
-        "transition-all duration-500",
-        "hover:shadow-2xl hover:scale-105",
-        "hover:border-white/40 dark:hover:border-slate-600/70"
+        "group relative h-full flex flex-col",
+        "bg-white/90 dark:bg-slate-800/90 backdrop-blur-2xl",
+        "border border-white/30 dark:border-slate-700/60",
+        "rounded-3xl shadow-2xl p-8",
+        "transition-all duration-700 ease-out",
+        "hover:shadow-3xl hover:scale-[1.02] hover:-translate-y-2",
+        "hover:border-white/50 dark:hover:border-slate-600/80",
+        "before:absolute before:inset-0 before:rounded-3xl",
+        "before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent",
+        "before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
       )}
     >
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Enhanced Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/8 via-purple-500/8 to-pink-500/8 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
       
-      {/* Animated border */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+      {/* Animated border glow */}
+      <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-sm animate-pulse" />
+      
+      {/* Floating particles effect */}
+      <div className="absolute inset-0 overflow-hidden rounded-3xl">
+        <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400/60 rounded-full animate-bounce" style={{animationDelay: '0s'}} />
+        <div className="absolute top-8 left-6 w-1.5 h-1.5 bg-purple-400/60 rounded-full animate-bounce" style={{animationDelay: '0.5s'}} />
+        <div className="absolute bottom-6 right-8 w-1 h-1 bg-pink-400/60 rounded-full animate-bounce" style={{animationDelay: '1s'}} />
+      </div>
       
       {/* Content */}
       <div className="relative z-10">
-        {/* Header */}
-        <div className="flex items-center justify-center mb-8">
+        {/* Enhanced Header */}
+        <div className="flex flex-col items-center justify-center mb-10">
           <Sparkles 
-            className="relative mr-4"
+            className="relative mb-6"
             particleColor="#0ea5e9"
-            particleDensity={3}
-            minSize={4}
-            maxSize={8}
+            particleDensity={4}
+            minSize={3}
+            maxSize={10}
           >
             <motion.div 
-              className="w-16 h-16 bg-gradient-to-br from-sky-400 to-sky-600 rounded-full flex items-center justify-center shadow-lg ring-4 ring-sky-400/30"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.3 }}
+              className="w-20 h-20 bg-gradient-to-br from-sky-400 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl ring-4 ring-sky-400/40 relative overflow-hidden"
+              whileHover={{ scale: 1.15, rotate: 10 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <i className={`${icon} text-white text-2xl`}></i>
+              {/* Icon glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl" />
+              <i className={`${icon} text-white text-3xl relative z-10 drop-shadow-lg`}></i>
+              
+              {/* Rotating border */}
+              <motion.div 
+                className="absolute inset-0 rounded-2xl border-2 border-white/30"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              />
             </motion.div>
           </Sparkles>
+          
           <motion.h3 
-            className="text-2xl md:text-3xl font-semibold text-slate-800 dark:text-slate-200 transition-colors duration-300"
-            initial={{ opacity: 0, x: -20 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 transition-colors duration-300 text-center leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: delay + 0.2 }}
           >
             {title}
           </motion.h3>
+          
+          {/* Decorative line */}
+          <motion.div 
+            className="w-16 h-0.5 bg-gradient-to-r from-transparent via-sky-500 to-transparent mt-4"
+            initial={{ scaleX: 0 }}
+            animate={isVisible ? { scaleX: 1 } : { scaleX: 0 }}
+            transition={{ duration: 0.8, delay: delay + 0.4 }}
+          />
         </div>
 
-        {/* Skills */}
-        <div className="space-y-6">
-          {skills.map((skill, skillIndex) => (
+        {/* Enhanced Skills */}
+        <div className="flex-1 space-y-5">
+          {skills.map((skill, index) => (
             <motion.div
-              key={skillIndex}
-              initial={{ opacity: 0, x: 30 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-              transition={{
-                duration: 0.6,
-                delay: delay + 0.4 + (skillIndex * 0.1)
-              }}
-              className="group/skill"
+              key={skill.name}
+              className="group/skill relative"
+              initial={{ opacity: 0, x: -30 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              transition={{ duration: 0.6, delay: delay + 0.4 + (index * 0.1) }}
             >
-              <div className="flex justify-between items-center mb-3">
-                <span className="text-lg font-medium text-slate-700 dark:text-slate-300 transition-colors duration-300 group-hover/skill:text-slate-900 dark:group-hover/skill:text-slate-100">
-                  {skill.name}
-                </span>
-                <motion.span 
-                  className="text-lg font-semibold text-sky-500 group-hover/skill:text-sky-400"
-                  initial={{ scale: 0 }}
-                  animate={isVisible ? { scale: 1 } : { scale: 0 }}
-                  transition={{ duration: 0.4, delay: delay + 0.6 + (skillIndex * 0.1) }}
-                >
-                  {skill.percentage}%
-                </motion.span>
-              </div>
+              {/* Skill item background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-sky-50/50 to-purple-50/50 dark:from-sky-900/20 dark:to-purple-900/20 rounded-xl opacity-0 group-hover/skill:opacity-100 transition-all duration-300 -m-2" />
               
-              {/* Progress bar container */}
-              <div className="relative w-full bg-slate-300 dark:bg-slate-600 rounded-full h-3 overflow-hidden transition-colors duration-300">
-                {/* Background glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 to-sky-600/20 rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300" />
+              <div className="relative z-10 p-2">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-lg font-semibold text-slate-700 dark:text-slate-300 group-hover/skill:text-sky-600 dark:group-hover/skill:text-sky-400 transition-colors duration-300">
+                    {skill.name}
+                  </span>
+                  <motion.span 
+                    className="text-sm font-bold text-white bg-gradient-to-r from-sky-500 to-purple-600 px-4 py-2 rounded-full shadow-lg ring-2 ring-sky-400/30"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {skill.percentage}%
+                  </motion.span>
+                </div>
                 
-                {/* Progress bar */}
-                <motion.div
-                  className="h-full bg-gradient-to-r from-sky-400 to-sky-600 rounded-full relative overflow-hidden"
-                  initial={{ width: 0 }}
-                  animate={isVisible ? { width: `${skill.percentage}%` } : { width: 0 }}
-                  transition={{
-                    duration: 1.2,
-                    delay: delay + 0.8 + (skillIndex * 0.1),
-                    ease: [0.25, 0.46, 0.45, 0.94]
-                  }}
-                >
-                  {/* Shimmer effect */}
+                {/* Enhanced Progress bar */}
+                <div className="relative h-4 bg-gradient-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 rounded-full overflow-hidden shadow-inner">
+                  {/* Background shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/skill:translate-x-full transition-transform duration-1500" />
+                  
+                  {/* Progress fill */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                    initial={{ x: '-100%' }}
-                    animate={isVisible ? { x: '100%' } : { x: '-100%' }}
-                    transition={{
-                      duration: 1.5,
-                      delay: delay + 1.5 + (skillIndex * 0.1),
-                      ease: "easeInOut"
-                    }}
+                    className="h-full bg-gradient-to-r from-sky-400 via-blue-500 to-purple-600 rounded-full relative overflow-hidden shadow-lg"
+                    initial={{ width: 0 }}
+                    animate={isVisible ? { width: `${skill.percentage}%` } : { width: 0 }}
+                    transition={{ duration: 1.5, delay: delay + 0.6 + (index * 0.1), ease: "easeOut" }}
+                  >
+                    {/* Enhanced shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
+                    
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/20 rounded-full" />
+                  </motion.div>
+                  
+                  {/* Progress indicator dot */}
+                  <motion.div
+                    className="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-white rounded-full shadow-lg"
+                    initial={{ left: '0%' }}
+                    animate={isVisible ? { left: `${skill.percentage}%` } : { left: '0%' }}
+                    transition={{ duration: 1.5, delay: delay + 0.6 + (index * 0.1), ease: "easeOut" }}
+                    style={{ marginLeft: '-4px' }}
                   />
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           ))}

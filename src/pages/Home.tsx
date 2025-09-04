@@ -41,7 +41,28 @@ const Home: React.FC = () => {
         <FloatingElements />
         <div className="flex items-center justify-center min-h-screen">
           <FloatingCard className="text-center z-10 p-12 max-w-4xl mx-4" delay={0.2}>
+            {/* Profile Photo */}
             <div className="mb-8">
+              <motion.div 
+                whileHover={{ scale: 1.05 }} 
+                className="relative inline-block mb-8"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 to-blue-400/20 rounded-full blur-xl" />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet="/assets/img/webp/jaidevimg.jpg"
+                  />
+                  <img
+                    src="/assets/img/jpg/jaidevimg.jpg"
+                    alt="Jaidev Yadav - Professional Photo"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-sky-400/50 dark:ring-sky-500/50 relative z-10"
+                  />
+                </picture>
+              </motion.div>
               <AnimatedText
                 text="Jaidev Yadav"
                 className="text-6xl md:text-8xl font-bold text-slate-800 dark:text-slate-100 mb-4 transition-colors duration-300"
@@ -49,7 +70,7 @@ const Home: React.FC = () => {
                 delay={0.5}
               />
               <AnimatedText
-                text="Programmer • Web Developer • Graphic Designer"
+                text="AI Enthusiast • Web Developer • Creator"
                 className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light transition-colors duration-300"
                 variant="slide"
                 delay={1.2}
