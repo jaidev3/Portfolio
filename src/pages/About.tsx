@@ -160,7 +160,7 @@ const About = () => {
                   <img
                     src="/assets/img/jpg/jaidevimg.jpg"
                     alt="Professional Me"
-                    className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-black/20 relative z-10"
+                    className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-black/20 relative z-10 filter grayscale"
                   />
                 </picture>
               </motion.div>
@@ -198,7 +198,7 @@ const About = () => {
                   <div
                     className={cn(
                       "w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center",
-                      "bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-blue-600"
+                      "bg-gray-100 text-gray-600"
                     )}
                   >
                     <i className={cn(info.icon, "text-xl")} />
@@ -227,7 +227,7 @@ const About = () => {
 
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full opacity-30" />
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300 rounded-full opacity-30" />
 
               {timelineData.map((item, index) => {
                 const isVisible = visibleItems.has(index);
@@ -272,7 +272,7 @@ const About = () => {
                           <div
                             className={cn(
                               "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4",
-                              `bg-gradient-to-r ${item.color} text-white`
+                              "bg-gray-800 text-white"
                             )}
                           >
                             <i className={cn(item.icon, "mr-2")} />
@@ -292,7 +292,7 @@ const About = () => {
                         <motion.div
                           className={cn(
                             "w-6 h-6 rounded-full border-4 border-white shadow-lg z-10",
-                            `bg-gradient-to-r ${item.color}`
+                            "bg-gray-600"
                           )}
                           whileHover={{ scale: 1.5 }}
                           animate={
@@ -374,7 +374,7 @@ const About = () => {
                       transition={{ duration: 0.6 }}
                       className={cn(
                         "w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center",
-                        "bg-gradient-to-br from-slate-100 to-slate-200"
+                        "bg-gray-100"
                       )}
                     >
                       <i className={cn(hobby.icon, "text-2xl", hobby.color)} />

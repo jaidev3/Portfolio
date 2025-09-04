@@ -76,7 +76,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
                 src={project.image}
                 alt={`${project.title} Screenshot`}
                 className={cn(
-                  "w-full h-full object-cover transition-all duration-500",
+                  "w-full h-full object-cover transition-all duration-500 filter grayscale",
                   imageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-110"
                 )}
                 onLoad={() => setImageLoaded(true)}

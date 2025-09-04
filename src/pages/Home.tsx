@@ -38,7 +38,7 @@ const Home: React.FC = () => {
                   <img
                     src="/assets/img/jpg/jaidevimg.jpg"
                     alt="Jaidev Yadav - Professional Photo"
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-black/20 relative z-10"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-black/20 relative z-10 filter grayscale"
                   />
                 </picture>
               </motion.div>

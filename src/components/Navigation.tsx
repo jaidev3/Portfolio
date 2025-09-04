@@ -55,10 +55,10 @@ const Navigation = () => {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center space-x-2"
               >
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">JY</span>
                 </div>
-                <span className="font-bold text-lg text-slate-800 hidden sm:block">
+                <span className="font-bold text-lg text-black hidden sm:block">
                   Jaidev Yadav
                 </span>
               </motion.div>
