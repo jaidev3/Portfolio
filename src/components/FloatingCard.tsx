@@ -40,11 +40,11 @@ const FloatingCard: React.FC<FloatingCardProps> = ({
       } : {}}
       className={cn(
         "relative group",
-        "bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl",
-        "border border-white/20 dark:border-slate-700/50",
+        "bg-white/80 backdrop-blur-xl",
+        "border border-white/20",
         "rounded-2xl shadow-xl",
         "transition-all duration-300",
-        "hover:shadow-2xl hover:border-white/40 dark:hover:border-slate-600/70",
+        "hover:shadow-2xl hover:border-white/40",
         className
       )}
     >

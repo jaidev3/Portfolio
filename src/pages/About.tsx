@@ -127,13 +127,14 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 transition-colors duration-300 relative overflow-hidden pt-20">
       <Sparkles
-        className="absolute inset-0 bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300"
+        className="absolute inset-0"
         particleColor="#f59e0b"
         particleDensity={1}
         minSize={4}
         maxSize={8}
+        background="transparent"
       >
         <FloatingElements />
 
@@ -151,7 +152,7 @@ const About = () => {
                   <img
                     src="/assets/img/jpg/jaidevimg.jpg"
                     alt="Professional Me"
-                    className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-amber-400/50 dark:ring-amber-500/50 relative z-10"
+                    className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-2xl ring-4 ring-amber-400/50 relative z-10"
                   />
                 </picture>
               </motion.div>
@@ -159,7 +160,7 @@ const About = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="text-3xl md:text-4xl font-semibold text-slate-700 dark:text-slate-200 mt-6 transition-colors duration-300"
+                className="text-3xl md:text-4xl font-semibold text-slate-700 mt-6 transition-colors duration-300"
               >
                 Jaidev Yadav
               </motion.h2>
@@ -167,7 +168,7 @@ const About = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="text-lg text-slate-600 dark:text-slate-400 mt-2"
+                className="text-lg text-slate-600 mt-2"
               >
                 Full Stack Developer & Creative Thinker
               </motion.p>
@@ -189,15 +190,15 @@ const About = () => {
                   <div
                     className={cn(
                       "w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center",
-                      "bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-blue-600 dark:text-blue-400"
+                      "bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-blue-600"
                     )}
                   >
                     <i className={cn(info.icon, "text-xl")} />
                   </div>
-                  <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">
+                  <h3 className="font-semibold text-slate-800 mb-2">
                     {info.label}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                  <p className="text-slate-600 text-sm">
                     {info.value}
                   </p>
                 </FloatingCard>
@@ -211,7 +212,7 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold text-center text-slate-800 dark:text-slate-100 mb-12"
+              className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-12"
             >
               My Journey
             </motion.h2>
@@ -269,10 +270,10 @@ const About = () => {
                             <i className={cn(item.icon, "mr-2")} />
                             {item.year}
                           </div>
-                          <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">
+                          <h3 className="text-xl font-bold text-slate-800 mb-3">
                             {item.title}
                           </h3>
-                          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                          <p className="text-slate-600 leading-relaxed">
                             {item.description}
                           </p>
                         </FloatingCard>
@@ -282,7 +283,7 @@ const About = () => {
                       <div className="w-2/12 flex justify-center">
                         <motion.div
                           className={cn(
-                            "w-6 h-6 rounded-full border-4 border-white dark:border-slate-900 shadow-lg z-10",
+                            "w-6 h-6 rounded-full border-4 border-white shadow-lg z-10",
                             `bg-gradient-to-r ${item.color}`
                           )}
                           whileHover={{ scale: 1.5 }}
@@ -318,10 +319,10 @@ const About = () => {
               transition={{ delay: 0.8 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">
                 About Me
               </h3>
-              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
                 Ever since I was a kid, creating new things always got me
                 excited. However, at that time I didn't have enough resources to
                 pursue the same. That passion drove me to pursue engineering,
@@ -343,7 +344,7 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-8"
+              className="text-3xl md:text-4xl font-bold text-slate-800 mb-8"
             >
               Beyond Coding
             </motion.h3>
@@ -362,12 +363,12 @@ const About = () => {
                       transition={{ duration: 0.6 }}
                       className={cn(
                         "w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center",
-                        "bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800"
+                        "bg-gradient-to-br from-slate-100 to-slate-200"
                       )}
                     >
                       <i className={cn(hobby.icon, "text-2xl", hobby.color)} />
                     </motion.div>
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="font-semibold text-slate-800">
                       {hobby.name}
                     </h4>
                   </FloatingCard>

@@ -95,7 +95,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 pt-20 transition-colors duration-300 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 pt-20 transition-colors duration-300 relative overflow-hidden">
       <FloatingElements />
       
       <Sparkles
@@ -109,10 +109,10 @@ const Projects = () => {
       >
         <main className="max-w-7xl mx-auto px-4 py-16 relative z-10">
           <header className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 mb-4 transition-colors duration-300">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 transition-colors duration-300">
               Featured Projects
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-300 transition-colors duration-300">
+            <p className="text-xl text-slate-600 transition-colors duration-300">
               Explore my latest work and creative solutions
             </p>
           </header>

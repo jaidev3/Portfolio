@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import { LoadingProvider, useLoading } from "./contexts/LoadingContext";
 import Navigation from "./components/Navigation";
 import PageTransition from "./components/PageTransition";
@@ -14,7 +13,7 @@ const AppContent = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+      <div className="min-h-screen bg-white transition-colors duration-300">
         <Navigation />
         <PageTransition>
           <Routes>
@@ -32,13 +31,11 @@ const AppContent = () => {
 
 function App() {
   return (
-    <ThemeProvider>
-      <LoadingProvider>
-        <Router>
-          <AppContent />
-        </Router>
-      </LoadingProvider>
-    </ThemeProvider>
+    <LoadingProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </LoadingProvider>
   );
 }
 

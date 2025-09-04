@@ -20,14 +20,14 @@ const GlobalLoader: React.FC<GlobalLoaderProps> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/90 backdrop-blur-sm"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="flex flex-col items-center space-y-6 p-8 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 shadow-2xl"
+            className="flex flex-col items-center space-y-6 p-8 rounded-2xl bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl"
           >
             <LoadingSpinner size="lg" />
             
@@ -37,7 +37,7 @@ const GlobalLoader: React.FC<GlobalLoaderProps> = ({
               transition={{ delay: 0.3 }}
               className="text-center"
             >
-              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">
+              <h3 className="text-lg font-semibold text-slate-800 mb-2">
                 {message}
               </h3>
               <div className="flex space-x-1 justify-center">

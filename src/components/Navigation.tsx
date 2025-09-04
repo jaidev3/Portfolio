@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import ThemeToggle from './ThemeToggle';
 import Sparkles from './Sparkles';
 import { cn } from '../lib/utils';
 
@@ -39,8 +38,8 @@ const Navigation = () => {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
-            ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-200/50 dark:border-slate-700/50"
-            : "bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200/30 dark:border-slate-700/30"
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/50"
+            : "bg-white/90 backdrop-blur-sm border-b border-slate-200/30"
         )}
       >
         <Sparkles
@@ -61,7 +60,7 @@ const Navigation = () => {
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">JY</span>
                 </div>
-                <span className="font-bold text-lg text-slate-800 dark:text-slate-100 hidden sm:block">
+                <span className="font-bold text-lg text-slate-800 hidden sm:block">
                   Jaidev Yadav
                 </span>
               </motion.div>
@@ -83,7 +82,7 @@ const Navigation = () => {
                           "relative px-6 py-3 rounded-xl transition-all duration-300 font-medium flex items-center space-x-2 group",
                           isActive
                             ? "text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
-                            : "text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:bg-slate-50 dark:hover:bg-slate-800/50"
+                            : "text-slate-700 hover:text-blue-500 hover:bg-slate-50"
                         )}
                       >
                         <i className={cn(item.icon, "text-sm")} />
@@ -101,7 +100,7 @@ const Navigation = () => {
                         {/* Hover effect */}
                         {!isActive && (
                           <motion.div
-                            className="absolute inset-0 bg-slate-100 dark:bg-slate-800/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                            className="absolute inset-0 bg-slate-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
                           />
                         )}
                       </Link>
@@ -112,14 +111,12 @@ const Navigation = () => {
 
               {/* Right side controls */}
               <div className="flex items-center space-x-4">
-                <ThemeToggle />
-                
                 {/* Mobile menu button */}
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={toggleMobileMenu}
-                  className="md:hidden p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200"
+                  className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-200"
                   aria-label="Toggle mobile menu"
                 >
                   <motion.div
@@ -175,7 +172,7 @@ const Navigation = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: "100%", opacity: 0 }}
               transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-              className="fixed top-0 right-0 h-full w-80 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-l border-slate-200/50 dark:border-slate-700/50 z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 bg-white/95 backdrop-blur-md border-l border-slate-200/50 z-50 md:hidden"
             >
               <div className="p-6 pt-20">
                 <nav className="space-y-4">
@@ -195,7 +192,7 @@ const Navigation = () => {
                             "flex items-center space-x-4 px-6 py-4 rounded-xl transition-all duration-300 font-medium",
                             isActive
                               ? "text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"
-                              : "text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:bg-slate-50 dark:hover:bg-slate-800/50"
+                              : "text-slate-700 hover:text-blue-500 hover:bg-slate-50"
                           )}
                         >
                           <i className={cn(item.icon, "text-lg")} />

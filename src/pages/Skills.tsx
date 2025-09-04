@@ -102,7 +102,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 pt-20 transition-colors duration-300 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-300 pt-20 transition-colors duration-300 relative overflow-hidden">
       {/* Floating background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Large background blurs - reduced on mobile */}
@@ -169,7 +169,7 @@ const Skills = () => {
                 Skills & Expertise
               </h2>
             </div>
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 transition-colors duration-300 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 transition-colors duration-300 max-w-3xl mx-auto leading-relaxed px-4">
               Mastering technologies that drive innovation and create exceptional digital experiences
             </p>
             

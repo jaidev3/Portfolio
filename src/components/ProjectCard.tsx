@@ -47,11 +47,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
       }}
       className={cn(
         "group relative overflow-hidden",
-        "bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl",
-        "border border-white/20 dark:border-slate-700/50",
+        "bg-white/80 backdrop-blur-xl",
+        "border border-white/20",
         "rounded-3xl shadow-2xl",
         "transition-all duration-500",
-        "hover:shadow-3xl hover:border-white/40 dark:hover:border-slate-600/70"
+        "hover:shadow-3xl hover:border-white/40"
       )}
     >
       {/* Gradient overlay */}
@@ -87,14 +87,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
                 loading="lazy"
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 flex items-center justify-center">
-                <i className="fas fa-image text-4xl text-slate-400 dark:text-slate-500" />
+              <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                <i className="fas fa-image text-4xl text-slate-400" />
               </div>
             )}
             
             {/* Loading skeleton */}
             {!imageLoaded && (
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 dark:from-slate-700 dark:via-slate-600 dark:to-slate-700 animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 animate-pulse" />
             )}
             
             {/* Overlay with buttons */}
@@ -154,14 +154,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
               className="inline-block mb-4"
               whileHover={{ scale: 1.05 }}
             >
-              <span className="bg-gradient-to-r from-emerald-100 to-blue-100 dark:from-emerald-900/30 dark:to-blue-900/30 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200/50 dark:border-emerald-700/50">
+              <span className="bg-gradient-to-r from-emerald-100 to-blue-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200/50">
                 {project.category}
               </span>
             </motion.div>
 
             {/* Title */}
             <motion.h3
-              className="text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 transition-colors duration-300"
+              className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4 transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
             >
               {project.title}
@@ -169,7 +169,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
 
             {/* Description */}
             <motion.p
-              className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6 transition-colors duration-300"
+              className="text-slate-600 text-lg leading-relaxed mb-6 transition-colors duration-300"
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
               transition={{
@@ -199,7 +199,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isVisible = f
               {project.technologies.map((tech, techIndex) => (
                 <motion.span
                   key={techIndex}
-                  className="bg-slate-100/80 dark:bg-slate-700/80 backdrop-blur-sm text-slate-700 dark:text-slate-300 px-4 py-2 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 border border-slate-200/50 dark:border-slate-600/50"
+                  className="bg-slate-100/80 backdrop-blur-sm text-slate-700 px-4 py-2 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 border border-slate-200/50"
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "rgba(59, 130, 246, 0.1)",

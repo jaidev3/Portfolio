@@ -42,12 +42,12 @@ const SkillCard: React.FC<SkillCardProps> = ({
       }}
       className={cn(
         "group relative h-full flex flex-col",
-        "bg-white/90 dark:bg-slate-800/90 backdrop-blur-2xl",
-        "border border-white/30 dark:border-slate-700/60",
+        "bg-white/90 backdrop-blur-2xl",
+        "border border-white/30",
         "rounded-3xl shadow-2xl p-8",
         "transition-all duration-700 ease-out",
         "hover:shadow-3xl hover:scale-[1.02] hover:-translate-y-2",
-        "hover:border-white/50 dark:hover:border-slate-600/80",
+        "hover:border-white/50",
         "before:absolute before:inset-0 before:rounded-3xl",
         "before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent",
         "before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
@@ -96,7 +96,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
           </Sparkles>
           
           <motion.h3 
-            className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 transition-colors duration-300 text-center leading-tight"
+            className="text-2xl md:text-3xl font-bold text-slate-800 transition-colors duration-300 text-center leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: delay + 0.2 }}
@@ -124,11 +124,11 @@ const SkillCard: React.FC<SkillCardProps> = ({
               transition={{ duration: 0.6, delay: delay + 0.4 + (index * 0.1) }}
             >
               {/* Skill item background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-50/50 to-purple-50/50 dark:from-sky-900/20 dark:to-purple-900/20 rounded-xl opacity-0 group-hover/skill:opacity-100 transition-all duration-300 -m-2" />
+              <div className="absolute inset-0 bg-gradient-to-r from-sky-50/50 to-purple-50/50 rounded-xl opacity-0 group-hover/skill:opacity-100 transition-all duration-300 -m-2" />
               
               <div className="relative z-10 p-2">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-lg font-semibold text-slate-700 dark:text-slate-300 group-hover/skill:text-sky-600 dark:group-hover/skill:text-sky-400 transition-colors duration-300">
+                  <span className="text-lg font-semibold text-slate-700 group-hover/skill:text-sky-600 transition-colors duration-300">
                     {skill.name}
                   </span>
                   <motion.span 
@@ -141,7 +141,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
                 </div>
                 
                 {/* Enhanced Progress bar */}
-                <div className="relative h-4 bg-gradient-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 rounded-full overflow-hidden shadow-inner">
+                <div className="relative h-4 bg-gradient-to-r from-slate-200 to-slate-300 rounded-full overflow-hidden shadow-inner">
                   {/* Background shimmer */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/skill:translate-x-full transition-transform duration-1500" />
                   
