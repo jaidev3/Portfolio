@@ -24,7 +24,7 @@ export function Contact() {
                   <Mail className="h-5 w-5 text-primary" />
                   <div>
                     <h4>Email</h4>
-                    <p className="text-muted-foreground">john.developer@email.com</p>
+                    <p className="text-muted-foreground">jaidevyadav720@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
@@ -36,7 +36,7 @@ export function Contact() {
                   <Phone className="h-5 w-5 text-primary" />
                   <div>
                     <h4>Phone</h4>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 7206148907</p>
                   </div>
                 </div>
               </CardContent>
@@ -55,7 +55,7 @@ export function Contact() {
             </Card>
           </div>
           
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
             </CardHeader>
@@ -71,7 +71,7 @@ export function Contact() {
                 Send Message
               </Button>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>

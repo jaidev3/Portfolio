@@ -28,7 +28,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="shrink-0">
-                <h3 className="tracking-tight">John Developer</h3>
+                <h3 className="tracking-tight">Jaidev Yadav</h3>
               </div>
               
               {/* Desktop Navigation */}
@@ -106,12 +106,12 @@ export default function App() {
         {/* Footer */}
         <footer className="bg-secondary/10 py-12 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="mb-4">John Developer</h3>
+            <h3 className="mb-4">Jaidev Yadav</h3>
             <p className="text-muted-foreground mb-6">
               Senior Software Engineer | Full-Stack Developer | DevOps Enthusiast
             </p>
             <p className="text-sm text-muted-foreground">
-              © 2025 John Developer. All rights reserved.
+              © 2025 Jaidev Yadav. All rights reserved.
             </p>
           </div>
         </footer>

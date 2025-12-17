@@ -1,38 +1,48 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Code, Settings, Globe, Database, TestTube, Cloud } from "lucide-react";
+import { Code, Settings, Globe, Database, TestTube, Cloud, Brain } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
     {
       icon: Code,
+      title: "Overview",
+      skills: ["Full-Stack Development", "API Design", "Database Design", "System Architecture"]
+    },
+    {
+      icon: Brain, 
+      title: "AI/ML", 
+      skills: ["Langchain", "LlamaIndex", "LangGraph", "Deep Learning", "Transformers", "Machine Learning", "Neural Networks", "AI Agents", "RAG", "Computer Vision", "NLP"]
+    },
+    {
+      icon: Code,
       title: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "SQL", "PHP", "HCL"]
+      skills: ["Python", "JavaScript", "TypeScript", "SQL"]
     },
     {
       icon: Settings,
       title: "DevOps & Tools",
-      skills: ["Docker", "Git", "VIM", "NeoVim", "Kubernetes", "Agile", "CI/CD with Jenkins", "Terraform"]
+      skills: ["Docker", "Git", "VIM", "NeoVim", "Kubernetes", "Agile", "CI/CD", "Terraform"]
     },
     {
       icon: Globe,
       title: "JavaScript Libraries & Frameworks",
-      skills: ["Node.js", "React.js", "Bun.js", "Deno", "Vanilla JS", "Next.js"]
+      skills: ["Node.js", "React.js", "Bun.js", "Deno", "Vanilla JS", "Next.js", "Angular"]
     },
     {
       icon: Database,
       title: "Web Frameworks",
-      skills: ["Express.js", "Fastify"]
+      skills: ["FastAPI", "Express.js"]
     },
     {
       icon: Cloud,
       title: "Backend as a Service",
-      skills: ["Firebase", "Appwrite"]
+      skills: ["Firebase", "Appwrite", "Supabase"]
     },
     {
       icon: TestTube,
       title: "Testing",
-      skills: ["Jest"]
+      skills: ["Jest", "Cypress", "Jasmine", "Playwright"]
     }
   ];
 

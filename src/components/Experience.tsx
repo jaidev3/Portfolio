@@ -6,27 +6,27 @@ export function Experience() {
   const experiences = [
     {
       title: "Senior Software Engineer",
-      company: "Tech Solutions Inc.",
-      location: "Remote",
-      period: "2022 - Present",
+      company: "Kfin Technologies",
+      location: "Hyderabad, India",
+      period: "2024 - 2025",
       description: "Lead full-stack development projects using React, Node.js, and TypeScript. Implemented CI/CD pipelines with Jenkins and managed containerized applications with Docker and Kubernetes.",
-      technologies: ["React", "Node.js", "TypeScript", "Docker", "Kubernetes", "Jenkins"]
+      technologies: ["React", "Node.js", "TypeScript", "Docker", "Kubernetes"]
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Innovations Ltd.",
-      location: "New York, NY",
-      period: "2020 - 2022",
+      title: "Full Stack Engineer",
+      company: "Tunel Ground",
+      location: "Remote",
+      period: "2024 - 2024",
       description: "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with DevOps team to implement automated deployment processes and infrastructure as code with Terraform.",
-      technologies: ["JavaScript", "Express.js", "Firebase", "Terraform", "Git"]
+      technologies: ["React Native", "Express.js", "PostgreSQL", "Git"]
     },
     {
       title: "Software Developer",
-      company: "StartupCorp",
-      location: "San Francisco, CA",
-      period: "2019 - 2020",
+      company: "Elucidata",
+      location: "Remote",
+      period: "2022 - 2024",
       description: "Built responsive web applications and RESTful APIs. Worked with cross-functional teams using Agile methodologies to deliver high-quality software solutions.",
-      technologies: ["PHP", "JavaScript", "SQL", "Jest", "Agile"]
+      technologies: ["JavaScript", "React", "Angular", "Python", "AWS", "Jest", "Agile"]
     }
   ];
 
@@ -36,7 +36,7 @@ export function Experience() {
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl">Professional Experience</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Over 5 years of experience building scalable web applications and 
+            Over 3 years of experience building scalable web applications and 
             leading development teams in fast-paced environments.
           </p>
         </div>

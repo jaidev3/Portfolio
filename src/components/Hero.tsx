@@ -43,14 +43,14 @@ export function Hero() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight">
                 <span className="block">Hello, I'm</span>
                 <span className="block bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
-                  John Developer
+                  Jaidev Yadav
                 </span>
               </h1>
               
               <div className="space-y-4">
                 <p className="text-xl sm:text-2xl text-muted-foreground max-w-lg">
                   Senior Software Engineer crafting digital experiences with
-                  <span className="text-primary"> 5+ years</span> of expertise
+                  <span className="text-primary"> 3+ years</span> of expertise
                 </p>
                 
                 <p className="text-lg text-muted-foreground/80 max-w-md">
@@ -62,7 +62,8 @@ export function Hero() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="group relative overflow-hidden px-8 py-6">
+              <Button size="lg" onClick={() => window.open('https://drive.google.com/drive/folders/1kKOmT7iEdP0pZEVDjEVTLK_nvwOs0oW6')}
+                      className="group relative overflow-hidden px-8 py-6">
                 <span className="relative z-10 flex items-center gap-2">
                   <Download className="h-5 w-5" />
                   Download Resume
@@ -84,6 +85,7 @@ export function Hero() {
               <Button 
                 variant="ghost" 
                 size="icon" 
+                onClick={() => window.open('https://github.com/jaidev3')}
                 className="h-12 w-12 rounded-full bg-background/50 backdrop-blur-sm border border-primary/10 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
               >
                 <Github className="h-5 w-5" />
@@ -91,13 +93,15 @@ export function Hero() {
               <Button 
                 variant="ghost" 
                 size="icon" 
+                onClick={() => window.open('https://www.linkedin.com/in/jaidev-y-558691183/')}
                 className="h-12 w-12 rounded-full bg-background/50 backdrop-blur-sm border border-primary/10 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
               >
                 <Linkedin className="h-5 w-5" />
               </Button>
               <Button 
                 variant="ghost" 
-                size="icon" 
+                size="icon"
+                onClick={() => window.location.href = 'mailto:jaidevyadav720@gmail.com'}
                 className="h-12 w-12 rounded-full bg-background/50 backdrop-blur-sm border border-primary/10 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
               >
                 <Mail className="h-5 w-5" />
@@ -107,11 +111,11 @@ export function Hero() {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div className="text-center lg:text-left">
-                <div className="text-2xl md:text-3xl mb-1">50+</div>
+                <div className="text-2xl md:text-3xl mb-1">10+</div>
                 <div className="text-sm text-muted-foreground">Projects</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl md:text-3xl mb-1">5+</div>
+                <div className="text-2xl md:text-3xl mb-1">3+</div>
                 <div className="text-sm text-muted-foreground">Years Exp</div>
               </div>
               <div className="text-center lg:text-left">
@@ -132,8 +136,8 @@ export function Hero() {
               <div className="relative z-10 group">
                 <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border-4 border-background/50 shadow-2xl">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-                    alt="John Developer - Senior Software Engineer"
+                    src="https://avatars.githubusercontent.com/u/91534937?v=4"
+                    alt="Jaidev Yadav - Senior Software Engineer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   
