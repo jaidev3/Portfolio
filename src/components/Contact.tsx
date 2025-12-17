@@ -1,8 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Card, CardContent } from "./ui/card";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Contact() {
   return (
