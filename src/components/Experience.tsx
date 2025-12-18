@@ -10,7 +10,7 @@ export function Experience() {
       location: "Hyderabad, India",
       period: "2024 - 2025",
       description: "Lead full-stack development projects using React, Node.js, and TypeScript. Implemented CI/CD pipelines with Jenkins and managed containerized applications with Docker and Kubernetes.",
-      technologies: ["React", "Node.js", "TypeScript", "Docker", "Kubernetes"]
+      technologies: ["React", "React Native","Node.js", "TypeScript", "Docker", "Kubernetes"]
     },
     {
       title: "Full Stack Engineer",
