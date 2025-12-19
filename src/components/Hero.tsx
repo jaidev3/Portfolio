@@ -1,7 +1,14 @@
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { Github, Linkedin, Mail, Download, ArrowDown, Sparkles } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  ArrowDown,
+  Sparkles,
+} from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Hero() {
@@ -118,7 +125,10 @@ export function Hero() {
             animate="visible"
           >
             {/* Status Badge */}
-            <motion.div className="flex justify-center lg:justify-start" variants={itemVariants}>
+            <motion.div
+              className="flex justify-center lg:justify-start"
+              variants={itemVariants}
+            >
               <Badge
                 variant="secondary"
                 className="px-6 py-3 bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm"
@@ -140,12 +150,16 @@ export function Hero() {
               <div className="space-y-4">
                 <p className="text-xl sm:text-2xl text-muted-foreground max-w-lg mx-auto lg:mx-0">
                   Senior Software Engineer crafting digital experiences with
-                  <span className="text-primary font-semibold"> 3+ years</span> of expertise
+                  <span className="text-primary font-semibold">
+                    {" "}
+                    3+ years
+                  </span>{" "}
+                  of expertise
                 </p>
 
                 <p className="text-lg text-muted-foreground/80 max-w-md mx-auto lg:mx-0">
-                  Specializing in full-stack development, AI/ML, and scalable solutions
-                  that drive business growth.
+                  Specializing in full-stack development, AI/ML, and scalable
+                  solutions that drive business growth.
                 </p>
               </div>
             </motion.div>
@@ -157,7 +171,11 @@ export function Hero() {
             >
               <Button
                 size="lg"
-                onClick={() => window.open('https://drive.google.com/drive/folders/1kKOmT7iEdP0pZEVDjEVTLK_nvwOs0oW6')}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/drive/folders/1kKOmT7iEdP0pZEVDjEVTLK_nvwOs0oW6"
+                  )
+                }
                 className="group relative overflow-hidden px-8 py-6 bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-sm"
               >
                 <span className="relative z-10 flex items-center gap-2 font-semibold">
@@ -169,7 +187,11 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .querySelector("#projects")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="px-8 py-6 bg-background/50 backdrop-blur-sm border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
               >
                 View My Work
@@ -182,10 +204,22 @@ export function Hero() {
               variants={itemVariants}
             >
               {[
-                { icon: Github, href: 'https://github.com/jaidev3', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/in/jaidev-y-558691183/', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:jaidevyadav720@gmail.com', label: 'Email' },
-              ].map((social, _index) => (
+                {
+                  icon: Github,
+                  href: "https://github.com/jaidev3",
+                  label: "GitHub",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/jaidev-y-558691183/",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: Mail,
+                  href: "mailto:jaidevyadav720@gmail.com",
+                  label: "Email",
+                },
+              ].map((social) => (
                 <motion.div
                   key={social.label}
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -194,9 +228,10 @@ export function Hero() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => social.href.startsWith('mailto')
-                      ? window.location.href = social.href
-                      : window.open(social.href)
+                    onClick={() =>
+                      social.href.startsWith("mailto")
+                        ? (window.location.href = social.href)
+                        : window.open(social.href)
                     }
                     className="h-12 w-12 rounded-full bg-background/50 backdrop-blur-sm border border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
                     aria-label={social.label}
@@ -216,14 +251,18 @@ export function Hero() {
                 { value: "10+", label: "Projects" },
                 { value: "3+", label: "Years Exp" },
                 { value: "100%", label: "Client Satisfaction" },
-              ].map((stat, _index) => (
+              ].map((stat) => (
                 <motion.div
                   key={stat.label}
                   className="text-center lg:text-left"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-gradient mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-gradient mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -292,7 +331,9 @@ export function Hero() {
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-medium">Available for hire</span>
+                    <span className="text-sm font-medium">
+                      Available for hire
+                    </span>
                   </div>
                 </motion.div>
               </motion.div>
@@ -309,7 +350,11 @@ export function Hero() {
         >
           <motion.div
             className="flex flex-col items-center gap-2 cursor-pointer"
-            onClick={() => document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() =>
+              document
+                .querySelector("#skills")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             animate={{ y: [0, 8, 0] }}
             transition={{
               duration: 2,
@@ -317,7 +362,9 @@ export function Hero() {
               ease: "easeInOut",
             }}
           >
-            <span className="text-sm text-muted-foreground">Scroll to explore</span>
+            <span className="text-sm text-muted-foreground">
+              Scroll to explore
+            </span>
             <ArrowDown className="h-5 w-5 text-primary" />
           </motion.div>
         </motion.div>

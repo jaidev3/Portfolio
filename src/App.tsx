@@ -10,18 +10,18 @@ import { Contact } from "./components/Contact";
 import { ThemeProvider } from "./components/theme-provider";
 import { ThemeToggle } from "./components/theme-toggle";
 
+const navItems = [
+  { label: "Home", href: "#home" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-
-  const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" }
-  ];
 
   // Scroll spy effect
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function App() {
       setScrolled(window.scrollY > 50);
 
       // Determine active section
-      const sections = navItems.map(item => item.href.slice(1));
+      const sections = navItems.map((item) => item.href.slice(1));
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -60,10 +60,11 @@ export default function App() {
       <div className="min-h-screen bg-background transition-colors duration-300">
         {/* Navigation */}
         <motion.nav
-          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            scrolled
               ? "bg-background/95 backdrop-blur-xl border-b shadow-sm"
               : "bg-transparent"
-            }`}
+          }`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -76,7 +77,9 @@ export default function App() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h3 className="tracking-tight text-gradient font-bold">Jaidev Yadav</h3>
+                <h3 className="tracking-tight text-gradient font-bold">
+                  Jaidev Yadav
+                </h3>
               </motion.div>
 
               {/* Desktop Navigation */}
@@ -86,10 +89,11 @@ export default function App() {
                     <motion.button
                       key={item.label}
                       onClick={() => handleNavClick(item.href)}
-                      className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${activeSection === item.href.slice(1)
+                      className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
+                        activeSection === item.href.slice(1)
                           ? "text-primary-foreground"
                           : "text-muted-foreground hover:text-foreground"
-                        }`}
+                      }`}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * index }}
@@ -147,10 +151,11 @@ export default function App() {
                 <motion.button
                   key={item.label}
                   onClick={() => handleNavClick(item.href)}
-                  className={`w-full text-left px-4 py-3 rounded-lg text-base transition-all ${activeSection === item.href.slice(1)
+                  className={`w-full text-left px-4 py-3 rounded-lg text-base transition-all ${
+                    activeSection === item.href.slice(1)
                       ? "bg-primary text-primary-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    }`}
+                  }`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * index }}
@@ -189,7 +194,8 @@ export default function App() {
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="mb-4 text-gradient">Jaidev Yadav</h3>
             <p className="text-muted-foreground mb-6">
-              Senior Software Engineer | Full-Stack Developer | DevOps Enthusiast
+              Senior Software Engineer | Full-Stack Developer | DevOps
+              Enthusiast
             </p>
             <p className="text-sm text-muted-foreground">
               © 2025 Jaidev Yadav. All rights reserved.
@@ -207,7 +213,8 @@ function ScrollProgress() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrollProgress = (window.scrollY / totalHeight) * 100;
       setProgress(scrollProgress);
     };
