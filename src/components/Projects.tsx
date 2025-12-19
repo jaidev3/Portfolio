@@ -1,8 +1,10 @@
+import { motion } from "motion/react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "./scroll-animations";
 
 export function Projects() {
   const projects = [
@@ -35,50 +37,105 @@ export function Projects() {
   return (
     <section className="py-20 px-4 bg-secondary/5">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl">Featured Projects</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A selection of projects that demonstrate my expertise in full-stack 
-            development and modern DevOps practices.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ScrollReveal>
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-gradient">Featured Projects</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A selection of projects that demonstrate my expertise in full-stack
+              development and modern DevOps practices.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden">
-              <div className="aspect-video overflow-hidden">
-                <ImageWithFallback
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="flex gap-2 pt-2">
-                  <Button variant="outline" size="sm" className="gap-2">
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Button>
-                  <Button size="sm" className="gap-2">
-                    <ExternalLink className="h-4 w-4" />
-                    Demo
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <StaggerItem key={index}>
+              <motion.div
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <Card className="overflow-hidden group h-full flex flex-col hover:shadow-2xl hover:border-primary/30 transition-all duration-300">
+                  <div className="aspect-video overflow-hidden relative">
+                    <ImageWithFallback
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {/* Overlay on hover */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4"
+                      initial={{ opacity: 0 }}
+                    >
+                      <div className="flex gap-2">
+                        <Button size="sm" variant="secondary" className="gap-2">
+                          <Github className="h-4 w-4" />
+                          Code
+                        </Button>
+                        <Button size="sm" className="gap-2">
+                          <ExternalLink className="h-4 w-4" />
+                          Demo
+                        </Button>
+                      </div>
+                    </motion.div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="group-hover:text-primary transition-colors">
+                      {project.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4 flex-1 flex flex-col">
+                    <p className="text-muted-foreground flex-1">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <motion.div
+                          key={techIndex}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: techIndex * 0.05 }}
+                        >
+                          <Badge
+                            variant="secondary"
+                            className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                          >
+                            {tech}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                    </div>
+                    <div className="flex gap-2 pt-2">
+                      <Button variant="outline" size="sm" className="gap-2 flex-1 hover:border-primary/50">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Button>
+                      <Button size="sm" className="gap-2 flex-1">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
+
+        {/* View More Button */}
+        <ScrollReveal delay={0.3}>
+          <div className="text-center mt-12">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open('https://github.com/jaidev3')}
+                className="px-8 hover:border-primary/50 hover:bg-primary/5"
+              >
+                <Github className="h-5 w-5 mr-2" />
+                View More on GitHub
+              </Button>
+            </motion.div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
