@@ -85,7 +85,7 @@ export default function App() {
         </nav>
 
         {/* Main Content */}
-        <main>
+        <main className="pt-16">
           <div id="home">
             <Hero />
           </div>
