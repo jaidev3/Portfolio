@@ -45,7 +45,7 @@ export function Contact() {
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
                     <h4>Location</h4>
-                    <p className="text-muted-foreground">Available for Remote Work</p>
+                    <p className="text-muted-foreground">Available for Work</p>
                   </div>
                 </div>
               </CardContent>
